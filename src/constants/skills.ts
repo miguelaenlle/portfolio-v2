@@ -87,3 +87,44 @@ export const SKILLS: { [key: string]: Skill[] } = {
   TOOLS: TOOLS,
 };
 
+export const REDDDIT_SKILLS = [
+  TAILWIND_CSS,
+  REACT_TS,
+  NODE_JS,
+  EXPRESS,
+  MONGO_DB,
+  SENDGRID,
+  JWT,
+  BCRYPT,
+  GCLOUD,
+  FIREBASE,
+  HEROKU,
+];
+export const SCATTER_SKILLS = [
+  SWIFT,
+  SWIFT_UI,
+  REACT_TS,
+  FIREBASE,
+  GCLOUD,
+  ALGOLIA,
+  NODE_JS,
+  AIRTABLES,
+];
+
+export const ASJH_SKILLS = [REACT_TS, FIREBASE, GCLOUD, NODE_JS];
+export const TIDYNOTE_SKILLS = [
+  SWIFT,
+  SWIFT_UI,
+  REACT_TS,
+  FIREBASE,
+  GCLOUD,
+  NODE_JS,
+];
+export const RENTR_SKILLS = [
+  SWIFT,
+  SWIFT_UI,
+  STRIPE,
+  FIREBASE,
+  GCLOUD,
+  NODE_JS,
+];

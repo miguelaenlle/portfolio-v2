@@ -17,7 +17,7 @@ const Navbar: React.FC<{
       )}
       {["About", "Skills", "Projects", "Contact"].map((buttonText) => {
         return (
-          <div>
+          <div key={`navbar-button-${buttonText}`}>
             <NavbarButton
               text={buttonText}
               selectedButton={props.selectedPage}

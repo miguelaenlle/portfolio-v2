@@ -21,7 +21,7 @@ const Hero: React.FC<{}> = (props) => {
             <Github delay={400}/>
             <Linkedin delay={450}/>
           </div>
-          <ExternalLink />
+          <ExternalLink delay={500}/>
         </div>
       </Wrapper>
     </div>
