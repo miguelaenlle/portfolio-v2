@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+import Header from "../../shared/components/Header";
 import SkillGroup from "../components/SkillGroup";
 import Wrapper from "../../shared/components/Wrapper";
 

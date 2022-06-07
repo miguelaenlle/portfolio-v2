@@ -4,7 +4,7 @@ import EmailLink from "../components/EmailLink";
 const ContactForm: React.FC<{}> = (props) => {
   return (
     <div>
-      <div className="bg-hero-pattern py-60 p-10  space-y-3">
+      <div className="bg-hero-pattern py-60 space-y-3">
         <Wrapper>
           <div>
             <p className="text-3xl text-zinc-800">In need of a developer?</p>

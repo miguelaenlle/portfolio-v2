@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import Footer from "./footer/sections/Footer";
-import ContactForm from "./main/sections/ContactForm";
-import Hero from "./main/sections/Hero";
-import Projects from "./main/sections/Projects";
-import Skills from "./main/sections/Skills";
+import Footer from "./footer/pages/Footer";
+import ContactForm from "./contact/pages/ContactForm";
+import Hero from "./hero/pages/Hero";
+import Projects from "./projects/pages/Projects";
+import Skills from "./skills/pages/Skills";
 import NavbarWrapper from "./navbar/pages/NavbarWrapper";
 
 function App() {

@@ -1,9 +1,9 @@
 import React from "react";
 import { LINKEDIN_LINK } from "../../constants/links";
-import Icon from "../components/Icon";
-const Linkedin = () => {
+import Icon from "./Icon";
+const Linkedin: React.FC<{ delay: number }> = (props) => {
   return (
-    <Icon link={LINKEDIN_LINK}>
+    <Icon link={LINKEDIN_LINK} delay={props.delay}>
       <svg
         width="100%"
         height="100%"

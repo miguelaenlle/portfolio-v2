@@ -8,7 +8,7 @@ const NavbarWrapper: React.FC<{
   handleGoToPage: (newPage: string) => void;
 }> = (props) => {
   const windowDimensions = useWindowDimensions();
-  const [isTransparent, setIsTransparent] = useState(false);
+  const [isTransparent, setIsTransparent] = useState(true);
   useEffect(() => {
     const handleScroll = () => {
       const location = window.scrollY;

@@ -1,9 +1,9 @@
 import { GITHUB_LINK } from "../../constants/links";
-import Icon from "../components/Icon";
+import Icon from "./Icon";
 
-const Github: React.FC<{}> = (props) => {
+const Github: React.FC<{ delay: number }> = (props) => {
   return (
-    <Icon link={GITHUB_LINK}>
+    <Icon link={GITHUB_LINK} delay={props.delay}>
       <svg
         width="100%"
         height="100%"
