@@ -4,7 +4,9 @@ import { motion } from "framer-motion";
 
 const ExternalLink: React.FC<{ delay: number }> = (props) => {
   return (
-    <motion.div
+    <motion.a
+      href={RESUME_LINK}
+      target="_blank"
       animate={{ opacity: [0, 1], y: [-30, 0] }}
       transition={{
         delay: props.delay,
@@ -17,7 +19,7 @@ const ExternalLink: React.FC<{ delay: number }> = (props) => {
         View resume
       </p>
       <ExternalLinkIcon className="h-7 text-cyan-600 group-hover:text-cyan-800" />
-    </motion.div>
+    </motion.a>
   );
 };
 export default ExternalLink;
