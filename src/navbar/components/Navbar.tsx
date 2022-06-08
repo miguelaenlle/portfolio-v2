@@ -15,10 +15,11 @@ const Navbar: React.FC<{
       {!props.isTransparent && (
         <p className="text-2xl font-bold mr-2">Miguel Aenlle</p>
       )}
-      {["About", "Skills", "Projects", "Contact"].map((buttonText) => {
+      {["About", "Skills", "Projects", "Contact"].map((buttonText, index) => {
         return (
           <div key={`navbar-button-${buttonText}`}>
             <NavbarButton
+              delay={0.1 * index}
               text={buttonText}
               selectedButton={props.selectedPage}
               handleGoToPage={props.handleGoToPage}
