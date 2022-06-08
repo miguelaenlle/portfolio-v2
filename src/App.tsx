@@ -90,35 +90,40 @@ function App() {
 
   return (
     <React.Fragment>
-      <NavbarWrapper
-        selectedPage={selectedPage}
-        handleGoToPage={handleGoToPage}
-      >
-        <div className="overflow-x-hidden">
-          <div ref={aboutRef}>
-            <Hero />
-          </div>
-          <div ref={skillsRef}>
-            <Skills />
-          </div>
-          <div ref={projectsRef}>
-            <Projects />
-          </div>
-          <div ref={contactRef}>
-            <ContactForm />
-          </div>
-          <br />
-          <Footer />
-        </div>
-      </NavbarWrapper>
+      <Switch location={background || location}>
+        <Route path="/">
+          <NavbarWrapper
+            selectedPage={selectedPage}
+            handleGoToPage={handleGoToPage}
+          >
+            <div className="overflow-x-hidden">
+              <div ref={aboutRef}>
+                <Hero />
+              </div>
+              <div ref={skillsRef}>
+                <Skills />
+              </div>
+              <div ref={projectsRef}>
+                <Projects />
+              </div>
+              <div ref={contactRef}>
+                <ContactForm />
+              </div>
+              <br />
+              <Footer />
+            </div>
+          </NavbarWrapper>
+        </Route>
+        <Route path="*">
+          <Redirect to="/" />
+        </Route>
+      </Switch>
 
-      {background && (
-        <Switch>
-          <Route exact path="/project/:projectId">
-            <ProjectPage />
-          </Route>
-        </Switch>
-      )}
+      <Switch>
+        <Route exact path="/project/:projectId">
+          <ProjectPage />
+        </Route>
+      </Switch>
     </React.Fragment>
   );
 }

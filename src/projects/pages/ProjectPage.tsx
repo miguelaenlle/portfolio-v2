@@ -10,28 +10,6 @@ import ProjectDescription from "../components/ProjectDescription";
 import ProjectScreenshots from "../components/ProjectScreenshots";
 import ProjectSkills from "../components/ProjectSkills";
 import ProjectVideos from "../components/ProjectVideos";
-import { motion } from "framer-motion";
-
-const dropIn = {
-  hidden: {
-    y: "-20vh",
-    opacity: 0,
-  },
-  visible: {
-    y: "0",
-    opacity: 1,
-    transition: {
-      duration: 2,
-      type: "spring",
-      damping: 20,
-      stiffness: 100,
-    },
-  },
-  exit: {
-    y: "-20vh",
-    opacity: 0,
-  },
-};
 
 const ProjectPage: React.FC<{}> = (props) => {
   const params = useParams<{ projectId: string }>();
@@ -59,13 +37,7 @@ const ProjectPage: React.FC<{}> = (props) => {
 
   return (
     <Modal handleDismiss={handleDismiss}>
-      <motion.div
-        variants={dropIn}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
-        className="bg-zinc-50 w-2/3 nonlg:w-5/6 micro:w-full max-w-3xl mx-auto mt-24 rounded-lg p-7 mb-52 micro:mt-3"
-      >
+      <div className="bg-zinc-50 w-2/3 nonlg:w-5/6 micro:w-full max-w-3xl mx-auto mt-24 rounded-lg p-7 mb-52 micro:mt-3">
         {project ? (
           <React.Fragment>
             <Header project={project} handleDismiss={handleDismiss} />
@@ -96,7 +68,7 @@ const ProjectPage: React.FC<{}> = (props) => {
             />
           </div>
         )}
-      </motion.div>
+      </div>
     </Modal>
   );
 };
