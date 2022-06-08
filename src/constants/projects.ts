@@ -54,7 +54,7 @@ export const PROJECTS = [
     ["SUX5xflrFCo"],
     null,
     "https://redddit-app.web.app/home",
-    "https://github.com/miguelaenlle/reddit-clone"
+    "https://github.com/miguelaenlle/reddit-clone-open"
   ),
   new ProjectItem(
     SCATTER_ID,

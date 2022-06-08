@@ -17,10 +17,10 @@ module.exports = {
           min: "960px",
         },
         nonlg: {
-          max: "1100px",
+          max: "1000px",
         },
         lg: {
-          min: "1100px",
+          min: "1000px",
         },
         micro: {
           max: "750px",
