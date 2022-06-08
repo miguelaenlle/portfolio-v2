@@ -12,8 +12,8 @@ const TabletMockup: React.FC<{ images: Preview[] }> = (props) => {
         <img
           className={
             isVisible
-              ? `transition-all block animate-in fade-in slide-in-from-right-52 duration-1000 object-contain max-w-2xl w-full`
-              : "hidden"
+              ? `transition-all block animate-in fade-in slide-in-from-right-52 duration-1000 object-contain max-w-3xl w-ful`
+              : "invisible"
           }
           src={props.images[0].mockupPath}
         />

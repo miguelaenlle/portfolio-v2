@@ -45,13 +45,21 @@ const Header: React.FC<{ project: ProjectItem; handleDismiss: () => void }> = (
           <p className="text-md text-zinc-500">{props.project.location}</p>
         </div>
         {props.project.organizationURL ? (
-          <a href={props.project.organizationURL} target={"_blank"} className="group flex items-center space-x-1 hover:cursor-pointer">
-            <OfficeBuildingIcon className="transition-all w-5 h-5 text-cyan-700 group-hover:text-cyan-900 group-hover:scale-105" />
-            <p className="transition-all text-md text-cyan-700 group-hover:text-cyan-900 group-hover:font-bold">
-              {props.project.organization}
-            </p>
-            <ExternalLinkIcon className=" transition-all w-5 h-5 text-cyan-700 group-hover:text-cyan-900 group-hover:scale-105" />
-          </a>
+          <div className="flex">
+            <a
+              href={props.project.organizationURL}
+              target={"_blank"}
+              className="group flex items-center space-x-1 hover:cursor-pointer"
+            >
+              <OfficeBuildingIcon className="transition-all w-5 h-5 text-cyan-700 group-hover:text-cyan-900 group-hover:scale-105" />
+              <p className="transition-all text-md text-cyan-700 group-hover:text-cyan-900 group-hover:font-bold">
+                {props.project.organization}
+              </p>
+              <ExternalLinkIcon className=" transition-all w-5 h-5 text-cyan-700 group-hover:text-cyan-900 group-hover:scale-105" />
+            </a>
+
+            <p className="text-md text-zinc-500">{` · ${props.project.occupation}`}</p>
+          </div>
         ) : (
           <div className="group flex items-center space-x-1">
             <OfficeBuildingIcon className="w-5 h-5 text-zinc-600" />

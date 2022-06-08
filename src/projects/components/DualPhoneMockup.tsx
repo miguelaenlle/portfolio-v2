@@ -12,7 +12,7 @@ const DualPhoneMockup: React.FC<{ images: Preview[] }> = (props) => {
           className={
             isVisible
               ? `transition-all block animate-in fade-in slide-in-from-top-52 duration-1000 object-contain nonlg:w-1/2 lg:w-1/3 nonlg:max-w-[250px]`
-              : "hidden"
+              : "invisible"
           }
           src={props.images[0].mockupPath}
         />
@@ -20,7 +20,7 @@ const DualPhoneMockup: React.FC<{ images: Preview[] }> = (props) => {
           className={
             isVisible
               ? `transition-all block animate-in fade-in slide-in-from-top-48 duration-700 object-contain nonlg:w-1/2 lg:w-1/3 nonlg:max-w-[250px]`
-              : "hidden"
+              : "invisible"
           }
           src={props.images[1].mockupPath}
         />

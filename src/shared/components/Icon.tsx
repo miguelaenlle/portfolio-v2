@@ -8,7 +8,7 @@ const Icon: React.FC<{ link: string; children: JSX.Element; delay: number }> = (
   return (
     <a href={props.link} target={"_blank"}>
       <div
-        className={`group transition-all bg-zinc-500 hover:bg-zinc-700 hover:cursor-pointer w-12 h-12 p-2 rounded-lg shadow-md hover:shadow-lg ${
+        className={`group transition-all bg-zinc-500 hover:bg-zinc-800 hover:cursor-pointer w-12 h-12 p-2 rounded-lg shadow-md hover:shadow-lg ${
           displayed
             ? `block animate-in fade-in slide-in-from-top duration-500 delay-${props.delay}`
             : "invisible"
