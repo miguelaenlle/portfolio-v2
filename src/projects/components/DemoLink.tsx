@@ -14,14 +14,14 @@ const DemoLink: React.FC<{ linkId: string; linkText: string; link: string }> = (
       className="group flex items-center space-x-1 hover:cursor-pointer"
     >
       {props.linkId === "website" && (
-        <GlobeAltIcon className="transition-all w-5 h-5 text-cyan-700 group-hover:text-cyan-900 group-hover:scale-105" />
+        <GlobeAltIcon className="transition-all w-5 h-5 text-cyan-600 group-hover:text-cyan-800 group-hover:scale-105" />
       )}
       {props.linkId === "github" && <GithubIcon />}
       {props.linkId === "app-store" && <AppStoreIcon />}
-      <p className="transition-all text-md text-cyan-700 group-hover:text-cyan-900 group-hover:font-bold">
+      <p className="transition-all text-lg text-cyan-600 group-hover:text-cyan-800 group-hover:font-bold">
         {props.linkText}
       </p>
-      <ExternalLinkIcon className=" transition-all w-5 h-5 text-cyan-700 group-hover:text-cyan-900 group-hover:scale-105" />
+      <ExternalLinkIcon className=" transition-all w-5 h-5 text-cyan-600 group-hover:text-cyan-800 group-hover:scale-105" />
     </a>
   );
 };

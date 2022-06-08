@@ -7,7 +7,7 @@ module.exports = {
       },
       backgroundImage: {
         "hero-pattern":
-          "linear-gradient(to top left,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 50%), linear-gradient(rgba(71, 85, 105, 0.25), #fff)",
+          "linear-gradient(to top left,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 50%), linear-gradient(rgba(3, 105, 161, 0.25), #fff)",
       },
       screens: {
         mobile: {
@@ -23,7 +23,7 @@ module.exports = {
           min: "1100px",
         },
         micro: {
-          max: "500px",
+          max: "750px",
         },
       },
     },

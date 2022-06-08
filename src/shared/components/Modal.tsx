@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom";
 import { useHistory } from "react-router-dom";
+
 const Modal: React.FC<{ children: JSX.Element; handleDismiss: () => void }> = (
   props
 ) => {
@@ -16,7 +17,7 @@ const Modal: React.FC<{ children: JSX.Element; handleDismiss: () => void }> = (
     return ReactDOM.createPortal(
       <div
         onClick={handleClickOutside}
-        className="animate-in fade-in z-50 fixed top-0 left-0 w-screen h-screen overflow-y-scroll bg-black bg-opacity-60"
+        className="z-50 fixed top-0 left-0 w-screen h-screen overflow-y-scroll bg-black bg-opacity-60"
       >
         {props.children}
       </div>,

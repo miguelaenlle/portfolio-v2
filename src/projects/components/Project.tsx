@@ -27,16 +27,16 @@ const Project: React.FC<{
       </div>
       <div className="w-full lg:w-2/5 space-y-4 flex flex-col justify-center">
         <div className="flex items-center space-x-3">
-          <h2 className="text-2xl text-zinc-800 font-medium">
+          <h2 className="text-2xl text-zinc-800 font-bold">
             {props.project.displayTitle}
           </h2>
         </div>
-        <p className="text-zinc-500 text-xl pb-4">
+        <p className="text-zinc-400 text-xl micro:text-md">
           {props.project.description}
         </p>
 
         {props.project.impact && (
-          <p className="text-zinc-500 text-xl pb-4 italic">
+          <p className="text-zinc-500 text-xl micro:text-md pb-4">
             {props.project.impact}
           </p>
         )}

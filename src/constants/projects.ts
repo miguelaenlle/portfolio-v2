@@ -63,7 +63,7 @@ export const PROJECTS = [
     "Scatter",
     "App for John Hersey High School administrators to access student data by scanning student IDs",
     "Student ID Data Retrieval App",
-    "2,000+ students tracked",
+    "2,000+ students tracked ",
     SCATTER_ID,
     SCATTER_SKILLS,
 
@@ -112,8 +112,8 @@ export const PROJECTS = [
     "Custom Legal Forms Builder",
     "TidyNote",
     "Legal forms builder custom-made for national nonprofit",
-    "Legal forms builder custom-made for A Soldier's Journey Home, national nonprofit",
-    "500+ applicants/year",
+    "Legal forms builder for ASJH",
+    "Handles 500+ legal applications per year",
     ASJH_ID,
     ASJH_SKILLS,
 
@@ -153,7 +153,7 @@ export const PROJECTS = [
     "TidyNote",
     "iPad/iPhone app that lets students track assignments and teachers view students' progress",
     "Assignment Notebook App",
-    "220+ students/teachers using the app",
+    "220+ active users",
     TIDYNOTE_ID,
     TIDYNOTE_SKILLS,
 

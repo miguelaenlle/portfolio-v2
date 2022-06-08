@@ -10,7 +10,7 @@ const Hero: React.FC<{}> = (props) => {
     <div className="flex py-36 bg-hero-pattern">
       <Wrapper>
         <div className="w-screen space-y-3">
-          <p className="text-zinc-800 font-bold text-7xl animate-in fade-in slide-in-from-top duration-500">
+          <p className="text-zinc-800 font-bold text-7xl micro:text-5xl">
             Miguel Aenlle
           </p>
           <Subheader />

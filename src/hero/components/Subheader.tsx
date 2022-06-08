@@ -4,13 +4,7 @@ const Subheader: React.FC<{}> = (props) => {
   const { displayed } = useDisplay(100);
 
   return (
-    <p
-      className={`text-zinc-600 text-2xl animate-in ${
-        displayed
-          ? "block fade-in slide-in-from-top duration-500 delay-200"
-          : "invisible"
-      }`}
-    >
+    <p className={`text-zinc-600 break-words text-2xl micro:text-xl w-full`}>
       Fullstack Web & Mobile Developer
     </p>
   );

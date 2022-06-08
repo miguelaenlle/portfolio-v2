@@ -94,7 +94,7 @@ function App() {
         selectedPage={selectedPage}
         handleGoToPage={handleGoToPage}
       >
-        <div className="overflow-x-clip">
+        <div className="overflow-x-hidden">
           <div ref={aboutRef}>
             <Hero />
           </div>

@@ -7,7 +7,7 @@ const ProjectDescription: React.FC<{ descriptionList: string[] }> = (props) => {
         return (
           <li
             key={`${Math.random.toString()}-descriptor`}
-            className="text-zinc-800 text-md"
+            className="text-zinc-500 text-lg"
           >
             {description}
           </li>
