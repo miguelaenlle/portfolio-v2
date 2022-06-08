@@ -7,11 +7,13 @@ class ProjectItem {
   displayTitle = "";
   actualTitle = "";
   description = "";
+  actualDescription = "";
   impact: string | null = null;
   url = "";
   skills: Skill[] = [];
 
   organization = "";
+  organizationURL: string | null = null;
   location = "";
   occupation = "";
   startTime = "";
@@ -33,11 +35,13 @@ class ProjectItem {
     displayTitle: string,
     actualTitle: string,
     description: string,
+    actualDescription: string,
     impact: string | null,
     url: string,
     skills: Skill[],
 
     organization: string,
+    organizationURL: string | null,
     location: string,
     occupation: string,
     startTime: string,
@@ -57,12 +61,14 @@ class ProjectItem {
     this.iconName = iconName;
     this.displayTitle = displayTitle;
     this.actualTitle = actualTitle;
+    this.actualDescription = actualDescription;
     this.description = description;
     this.impact = impact;
     this.url = url;
     this.skills = skills;
 
     this.organization = organization;
+    this.organizationURL = organizationURL;
     this.location = location;
     this.occupation = occupation;
     this.startTime = startTime;

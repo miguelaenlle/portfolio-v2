@@ -1,11 +1,24 @@
 import { ArrowsExpandIcon } from "@heroicons/react/outline";
+import { useEffect } from "react";
+import { useHistory, useLocation } from "react-router-dom";
 import ProjectItem from "../../shared/models/ProjectItem";
 import SkillItem from "../../skills/components/SkillItem";
 import Mockup from "./Mockup";
 const Project: React.FC<{
   project: ProjectItem;
 }> = (props) => {
+  const history = useHistory();
+  const location = useLocation();
+
   const mockup = <Mockup project={props.project} />;
+  const handleOpenProject = () => {
+    history.push({
+      pathname: `/project/${props.project.url}`,
+      state: {
+        background: location,
+      },
+    });
+  };
 
   return (
     <div className="lg:flex py-40 border-b-2 border-zinc-200">
@@ -28,10 +41,13 @@ const Project: React.FC<{
           </p>
         )}
 
-        <button className="w-fit group transition-all bg-zinc-50 shadow-md rounded-lg p-4  hover:bg-zinc-200">
+        <button
+          onClick={handleOpenProject}
+          className="w-fit group transition-all bg-zinc-100 shadow-md rounded-lg p-4  hover:bg-zinc-200"
+        >
           <div className="flex items-center space-x-3">
-            <ArrowsExpandIcon className="transition-all w-7 h-7 text-slate-600 group-hover:text-zinc-800 group-hover:scale-1" />
-            <p className="text-lg transition-all text-slate-600 group-hover:font-bold group-hover:text-zinc-800">
+            <ArrowsExpandIcon className="transition-all w-7 h-7 text-zinc-600 group-hover:text-zinc-800 group-hover:scale-1" />
+            <p className="text-lg transition-all text-zinc-600 group-hover:font-bold group-hover:text-zinc-800">
               View Project
             </p>
           </div>
@@ -42,6 +58,7 @@ const Project: React.FC<{
               <SkillItem
                 key={`skill-item-${Math.random().toString()}`}
                 skill={skill}
+                compact={false}
               />
             );
           })}

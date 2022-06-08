@@ -5,8 +5,15 @@ import Hero from "./hero/pages/Hero";
 import Projects from "./projects/pages/Projects";
 import Skills from "./skills/pages/Skills";
 import NavbarWrapper from "./navbar/pages/NavbarWrapper";
+import { Redirect, Route, Switch, useLocation } from "react-router-dom";
+import ProjectPage from "./projects/pages/ProjectPage";
 
 function App() {
+  const location = useLocation();
+
+  const state: any = location.state;
+  const background = state && state.background;
+
   const aboutRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -82,24 +89,37 @@ function App() {
   };
 
   return (
-    <NavbarWrapper selectedPage={selectedPage} handleGoToPage={handleGoToPage}>
-      <div className = "overflow-x-clip">
-        <div ref={aboutRef}>
-          <Hero />
+    <React.Fragment>
+      <NavbarWrapper
+        selectedPage={selectedPage}
+        handleGoToPage={handleGoToPage}
+      >
+        <div className="overflow-x-clip">
+          <div ref={aboutRef}>
+            <Hero />
+          </div>
+          <div ref={skillsRef}>
+            <Skills />
+          </div>
+          <div ref={projectsRef}>
+            <Projects />
+          </div>
+          <div ref={contactRef}>
+            <ContactForm />
+          </div>
+          <br />
+          <Footer />
         </div>
-        <div ref={skillsRef}>
-          <Skills />
-        </div>
-        <div ref={projectsRef}>
-          <Projects />
-        </div>
-        <div ref={contactRef}>
-          <ContactForm />
-        </div>
-        <br />
-        <Footer />
-      </div>
-    </NavbarWrapper>
+      </NavbarWrapper>
+
+      {background && (
+        <Switch>
+          <Route exact path="/project/:projectId">
+            <ProjectPage />
+          </Route>
+        </Switch>
+      )}
+    </React.Fragment>
   );
 }
 

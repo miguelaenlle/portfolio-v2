@@ -10,7 +10,7 @@ const LaptopMockup: React.FC<{ images: Preview[] }> = (props) => {
     return (
       <div ref={ref} className = "flex justify-center">
         <img
-          className={isVisible ? `transition-all block animate-in fade-in slide-in-from-right-52 duration-1000 object-contain max-w-3xl` : "hidden"}
+          className={isVisible ? `transition-all block animate-in fade-in slide-in-from-right-52 duration-1000 object-contain max-w-3xl w-full` : "hidden"}
           src={props.images[0].mockupPath}
         />
       </div>

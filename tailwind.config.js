@@ -14,16 +14,22 @@ module.exports = {
           max: "960px",
         },
         md: {
-          min: "960px"
+          min: "960px",
         },
         nonlg: {
-          max: "1100px"
+          max: "1100px",
         },
         lg: {
-          min: "1100px"
-        }
+          min: "1100px",
+        },
+        micro: {
+          max: "500px",
+        },
       },
     },
   },
-  plugins: [require("tailwindcss-animate")]
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
 };

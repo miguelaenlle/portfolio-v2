@@ -8,7 +8,7 @@ const Navbar: React.FC<{
 }> = (props) => {
   return (
     <div
-      className={`transition-all fixed top-0 left-0 z-50 h-14 flex space-x-4 w-screen items-center p-10 ${
+      className={`transition-all fixed top-0 left-0 z-40 h-14 flex space-x-4 w-screen items-center p-10 ${
         props.isTransparent ? "" : "bg-zinc-50 shadow-md"
       }`}
     >

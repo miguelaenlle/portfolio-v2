@@ -5,7 +5,7 @@ const Subheader: React.FC<{}> = (props) => {
 
   return (
     <p
-      className={`text-slate-600 text-2xl animate-in ${
+      className={`text-zinc-600 text-2xl animate-in ${
         displayed
           ? "block fade-in slide-in-from-top duration-500 delay-200"
           : "invisible"

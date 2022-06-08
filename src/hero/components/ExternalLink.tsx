@@ -13,10 +13,10 @@ const ExternalLink: React.FC<{ delay: number }> = (props) => {
             : "invisible"
         } transition-all group hover:cursor-pointer flex items-center space-x-1`}
       >
-        <p className="transition-all text-xl text-slate-400 group-hover:text-zinc-800 group-hover:font-bold">
+        <p className="transition-all text-xl text-slate-400 group-hover:text-slate-800 group-hover:font-bold">
           View resume
         </p>
-        <ExternalLinkIcon className="transition-all h-7 text-slate-400 group-hover:text-zinc-800" />
+        <ExternalLinkIcon className="transition-all h-7 text-slate-400 group-hover:text-slate-800" />
       </div>
     </a>
   );
