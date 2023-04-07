@@ -28,7 +28,8 @@ function App() {
   let timer: ReturnType<typeof setTimeout>;
 
   window.addEventListener("scroll", function () {
-    if (refLocations !== {}) {
+
+    if (Object.keys(refLocations).length > 0) {
       if (timer !== null) {
         clearTimeout(timer);
       }

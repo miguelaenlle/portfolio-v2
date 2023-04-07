@@ -110,7 +110,7 @@ export const PROJECTS = [
     ASJH_ID,
     ASJH_ID,
     "Custom Legal Forms Builder",
-    "TidyNote",
+    "Legal Forms Builder",
     "Legal forms builder custom-made for national nonprofit",
     "Legal forms builder for ASJH",
     "Handles 500+ legal applications per year",
@@ -153,7 +153,7 @@ export const PROJECTS = [
     "TidyNote",
     "iPad/iPhone app that lets students track assignments and teachers view students' progress",
     "Assignment Notebook App",
-    "220+ active users",
+    "",
     TIDYNOTE_ID,
     TIDYNOTE_SKILLS,
 
