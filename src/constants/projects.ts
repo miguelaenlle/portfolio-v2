@@ -174,7 +174,6 @@ export const PROJECTS = [
     [
       "TidyNote is an Swift app and Typescript React website that gives students a virtual student notebook integrated with their schedules from district databases",
       "Educators can view student notebooks via the app or the website to provide additional support and instruction for students",
-      "Actively used by 220+ students and educators at John Hersey High School",
     ],
     [new Preview("/previews/tidynote/mockup-tablet.png", "tablet")],
     [
