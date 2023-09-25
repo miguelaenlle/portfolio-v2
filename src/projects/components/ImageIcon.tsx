@@ -5,7 +5,7 @@ const ImageIcon: React.FC<{ id: string; imageName: string }> = (props) => {
   if (!SPECIAL_IDS.includes(props.id)) {
     return (
       <img
-        className="h-12 shadow-md rounded-md object-contain"
+        className="h-12 rounded-md object-contain"
         src={`/icons/apps/${props.imageName}.png`}
       />
     );

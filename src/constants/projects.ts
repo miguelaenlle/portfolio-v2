@@ -6,6 +6,10 @@ import {
   RENTR_SKILLS,
   SCATTER_SKILLS,
   TIDYNOTE_SKILLS,
+  CUSTOMER_DATABASE_SKILLS,
+  COSTBOOK_SKILLS,
+  GANTT_SKILLS,
+  EASYMEAL_SKILLS
 } from "./skills";
 
 export const REDDIT_ID = "reddit-clone";
@@ -13,8 +17,159 @@ export const SCATTER_ID = "scatter";
 export const TIDYNOTE_ID = "tidynote";
 export const RENTR_ID = "rentr";
 export const ASJH_ID = "asjh";
+export const EASYMEAL_ID = "easymeal"
+export const HACKCLUB_ID = "hackclub"
+export const HERSEYDEVELOPERS_ID = "herseydevelopers"
+export const HSHACKS_ID = "hshacks"
+export const GANTTCHART_ID = "ganttchart"
+export const COSTBOOK_ID = "costbook"
+export const NCDB_ID = "ncdb"
 
 export const PROJECTS = [
+  new ProjectItem(
+    NCDB_ID,
+    "normandy",
+    "Customer Database System",
+    "Normandy Customer Database",
+    "Modern, cloud-based customer database for Normandy Remodeling",
+    "Modern, cloud-based customer database for Normandy Remodeling",
+    "Manages data on 30,000+ customers ",
+    NCDB_ID,
+    CUSTOMER_DATABASE_SKILLS, // Replace with actual skills
+    "Normandy Remodeling",
+    null,
+    "Remote",
+    "Software Engineer",
+    "June 2022",
+    "Present",
+    ["Web Development", "Database Management"],
+    [
+      "Modernized legacy Microsoft Access-based customer database into a custom cloud-based platform",
+      "System manages logistical & financial data on 30,000+ customers and 8,000+ remodeling jobs"
+    ],
+    [
+      new Preview("/screenshots/ncdb/laptop-1.png", "laptop")
+    ],
+    [
+      new Preview("/screenshots/ncdb/laptop-1.png", "laptop"),
+      new Preview("/screenshots/ncdb/laptop-2.png", "laptop"),
+      new Preview("/screenshots/ncdb/laptop-3.png", "laptop"),
+      new Preview("/screenshots/ncdb/laptop-4.png", "laptop"),
+      new Preview("/screenshots/ncdb/laptop-5.png", "laptop"),
+      new Preview("/screenshots/ncdb/laptop-6.png", "laptop"),
+      new Preview("/screenshots/ncdb/laptop-7.png", "laptop")
+    ], // Leave this empty for previews
+    [], // Leave this empty for videos
+    null, // Leave this blank if no app demo link
+    null, // Leave this blank if no web demo link
+    null // Leave this blank if no GitHub link
+  ),
+  new ProjectItem(
+    COSTBOOK_ID,
+    "normandy",
+    "Web-Based Costbook",
+    "Normandy Web-Based Costbook",
+    "Custom, web-based costbook for Normandy Remodeling",
+    "Custom, web-based costbook for Normandy Remodeling",
+    "1,500+ Cost Items tracked per remodeling job",
+    COSTBOOK_ID,
+    COSTBOOK_SKILLS, // Replace with actual skills
+    "Normandy Remodeling",
+    null,
+    "Remote",
+    "Software Engineer",
+    "June 2022",
+    "Present",
+    ["Web Development", "Database Management"],
+    [
+      "Developed custom, web-based costbook software for Normandy Remodeling",
+      "Tracks and automates commodity price updates for 1,300+ cost items per job"
+    ],
+    [
+      new Preview("/screenshots/costbook/laptop-2.png", "laptop")
+    ], // Leave this empty for screenshots
+    [
+      new Preview("/screenshots/costbook/laptop-1.png", "laptop"),
+      new Preview("/screenshots/costbook/laptop-2.png", "laptop"),
+      new Preview("/screenshots/costbook/laptop-3.png", "laptop")
+    ], // Leave this empty for previews
+    [], // Leave this empty for videos
+    null, // Leave this blank if no app demo link
+    null, // Leave this blank if no web demo link
+    null // Leave this blank if no GitHub link
+  ),
+
+  new ProjectItem(
+    GANTTCHART_ID,
+    "normandy",
+    "Gantt Chart Software",
+    "Normandy Web-Based Gantt Chart",
+    "Custom, web-based Gantt Chart for Normandy Remodeling",
+    "Custom, web-based Gantt Chart for Normandy Remodeling",
+    null,
+    GANTTCHART_ID,
+    GANTT_SKILLS, // Replace with actual skills
+    "Normandy Remodeling",
+    null,
+    "Remote",
+    "Software Engineer",
+    "June 2022",
+    "Present",
+    ["Web Development", "Database Management"],
+    [
+      "Developed proprietary Gantt Chart timeline software for designers to manage project timelines at Normandy Remodeling"
+    ],
+    [
+      new Preview("/screenshots/gantt/laptop-2.png", "laptop")
+    ], // Leave this empty for screenshots
+    [
+      new Preview("/screenshots/gantt/laptop-1.png", "laptop"),
+      new Preview("/screenshots/gantt/laptop-2.png", "laptop")
+    ], // Leave this empty for previews
+    [], // Leave this empty for videos
+    null, // Leave this blank if no app demo link
+    null, // Leave this blank if no web demo link
+    null // Leave this blank if no GitHub link
+  ),
+
+  new ProjectItem(
+    EASYMEAL_ID,
+    "easymeal",
+    "EasyMeal: Recipes",
+    "EasyMeal: Recipes",
+    "Speak what's in your kitchen, instantly get recipes",
+    "Speak what's in your kitchen, instantly get recipes",
+    null,
+    EASYMEAL_ID,
+    EASYMEAL_SKILLS, // Replace with actual skills
+    "EasyMeal",
+    null,
+    "Remote",
+    "Fullstack Developer",
+    "January 2023",
+    "June 2023",
+    ["Web Development", "Database Management"],
+    [
+      "Developed iOS app and website that instantly finds easy, healthy, and accessible meals using a user’s available kitchen ingredients",
+      "Aggregated 12,000+ recipes for the backend, developed voice transcription system for “Speak Ingredients” feature, and contributed to frontend development",
+      "Winner of Apple’s Student App Design Challenge. Presented at Apple’s Flagship Michigan Avenue Store",
+      "Popular vote winner of Git Init 2023, an international hackathon with 280+ participants"
+    ],
+    [
+      new Preview("/previews/easymeal/phone-1.png", "phone"),
+      new Preview("/previews/easymeal/phone-2.png", "phone"),
+    ],
+    [
+      new Preview("/screenshots/easymeal/laptop-1.png", "laptop"),
+      new Preview("/screenshots/easymeal/laptop-2.png", "laptop"),
+      new Preview("/screenshots/easymeal/phone-1.png", "phone"),
+      new Preview("/screenshots/easymeal/phone-2.png", "phone"),
+    ],  // Leave this empty for previews
+    [], // Leave this empty for videos
+    null, // Leave this blank if no app demo link
+    null, // Leave this blank if no web demo link
+    null // Leave this blank if no GitHub link
+  ),
   new ProjectItem(
     REDDIT_ID,
     REDDIT_ID,
@@ -134,7 +289,7 @@ export const PROJECTS = [
     ],
     [new Preview("/previews/asjh/mockup-laptop.png", "laptop")],
     [
-      
+
       new Preview("/screenshots/asjh/mockup-laptop-3.png", "laptop"),
       new Preview("/screenshots/asjh/mockup-phone.png", "phone"),
       new Preview("/screenshots/asjh/mockup-laptop-1.png", "laptop"),
@@ -228,7 +383,7 @@ export const PROJECTS = [
       new Preview("/previews/rentr/mockup-1.png", "phone"),
       new Preview("/previews/rentr/mockup-2.png", "phone"),
     ],
-    [ 
+    [
       new Preview("/screenshots/rentr/mockup-1.png", "phone"),
       new Preview("/screenshots/rentr/mockup-2.png", "phone"),
     ],

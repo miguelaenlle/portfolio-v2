@@ -44,6 +44,9 @@ export const AIRTABLES = new Skill("Airtables", "airtables");
 export const GCLOUD = new Skill("GCloud", "gcloud");
 export const ALGOLIA = new Skill("Algolia", "algolia");
 export const HEROKU = new Skill("Heroku", "heroku");
+export const AZURE = new Skill("Azure", "azure");
+export const MYSQL = new Skill("MySQL", "mysql");
+export const VAPOR = new Skill("Vapor", "vapor");
 
 export const BACKEND_SKILLS = [
   NODE_JS,
@@ -54,6 +57,7 @@ export const BACKEND_SKILLS = [
   FIREBASE,
   ALGOLIA,
   GCLOUD,
+  AZURE,
   AMPLIFY,
   STRIPE,
   PYTHON,
@@ -61,6 +65,8 @@ export const BACKEND_SKILLS = [
   JWT,
   BCRYPT,
   AIRTABLES,
+  MYSQL,
+  VAPOR,
 ];
 
 export const PLANNING = new Skill("Planning", "planning");
@@ -77,8 +83,10 @@ export const FIGMA = new Skill("Figma", "figma");
 export const VSCODE = new Skill("Visual Studio Code", "vscode");
 export const POSTMAN = new Skill("Postman", "postman");
 export const DEVTOOLS = new Skill("Chrome DevTools", "devtools");
+export const JIRA = new Skill("Jira", "jira");
+export const CONFLUENCE = new Skill("Confluence", "confluence");
 
-export const TOOLS = [NOTION, TRELLO, GITHUB, FIGMA, VSCODE, POSTMAN, DEVTOOLS];
+export const TOOLS = [JIRA, CONFLUENCE, NOTION, TRELLO, GITHUB, FIGMA, VSCODE, POSTMAN, DEVTOOLS];
 
 export const SKILLS: { [key: string]: Skill[] } = {
   FRONTEND: FRONTEND_SKILLS,
@@ -128,3 +136,46 @@ export const RENTR_SKILLS = [
   GCLOUD,
   NODE_JS,
 ];
+
+export const CUSTOMER_DATABASE_SKILLS = [
+  REACT_TS,
+  MONGO_DB,
+  EXPRESS,
+  NODE_JS,
+  JWT,
+  BCRYPT,
+  JIRA
+]
+
+export const COSTBOOK_SKILLS = [
+  REACT_TS,
+  MONGO_DB,
+  EXPRESS,
+  NODE_JS,
+  AZURE,
+  REDUX,
+  JWT,
+  BCRYPT,
+  JIRA
+]
+
+export const GANTT_SKILLS = [
+  REACT_TS,
+  MONGO_DB,
+  EXPRESS,
+  NODE_JS,
+  AZURE,
+  JWT,
+  BCRYPT,
+  JIRA
+]
+
+export const EASYMEAL_SKILLS = [
+  REACT_TS,
+  MONGO_DB,
+  EXPRESS,
+  NODE_JS,
+  FIREBASE,
+  SWIFT_UI,
+  SWIFT
+]
