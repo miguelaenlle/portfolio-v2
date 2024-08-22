@@ -12,7 +12,9 @@ export const JSX = new Skill("JSX", "react");
 export const REACT = new Skill("React", "react");
 export const REACT_TS = new Skill("ReactTS", "react");
 export const REDUX = new Skill("Redux", "redux");
+export const SPACY = new Skill("spaCy", "spacy");
 export const TAILWIND_CSS = new Skill("TailwindCSS", "tailwind");
+export const OPENAI = new Skill("OpenAI", "openai");
 
 export const FRONTEND_SKILLS = [
   SWIFT,
@@ -61,6 +63,8 @@ export const BACKEND_SKILLS = [
   AMPLIFY,
   STRIPE,
   PYTHON,
+  OPENAI,
+  SPACY,
   SENDGRID,
   JWT,
   BCRYPT,
@@ -157,6 +161,21 @@ export const COSTBOOK_SKILLS = [
   JWT,
   BCRYPT,
   JIRA
+]
+
+export const PLATFORMSAI_SKILLS = [
+  REACT_TS,
+  MONGO_DB,
+  EXPRESS,
+  NODE_JS,
+  AZURE,
+  REDUX,
+  JWT,
+  BCRYPT,
+  JIRA,
+  PYTHON,
+  SPACY,
+  OPENAI
 ]
 
 export const GANTT_SKILLS = [

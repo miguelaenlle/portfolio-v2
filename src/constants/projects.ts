@@ -9,7 +9,8 @@ import {
   CUSTOMER_DATABASE_SKILLS,
   COSTBOOK_SKILLS,
   GANTT_SKILLS,
-  EASYMEAL_SKILLS
+  EASYMEAL_SKILLS,
+  PLATFORMSAI_SKILLS
 } from "./skills";
 
 export const REDDIT_ID = "reddit-clone";
@@ -24,8 +25,53 @@ export const HSHACKS_ID = "hshacks"
 export const GANTTCHART_ID = "ganttchart"
 export const COSTBOOK_ID = "costbook"
 export const NCDB_ID = "ncdb"
+export const PLATFORMSAI_ID = "platformsai"
 
 export const PROJECTS = [
+  new ProjectItem(
+    PLATFORMSAI_ID,
+    "platformsai",
+    "PlatformsAI",
+    "PlatformsAI",
+    "Build custom, internal data platforms for your organization in minutes using AI.",
+    "Build custom, internal data platforms for your organization in minutes using AI.",
+    "Can process 1,700,000+ Data Cells/minute",
+    PLATFORMSAI_ID,
+    PLATFORMSAI_SKILLS, // Replace with actual skills
+    "PlatformsAI",
+    null,
+    "Remote",
+    "Software Engineer",
+    "May 2024",
+    "Present",
+    ["Web Development", "Database Management"],
+    [
+      "Created AI-powered, multi-tenant system that generates custom data management platforms in minutes from business spreadsheets.",
+      "Engineered distributed data cleaning algorithm capable of cleaning 1,700,000+ data cells/min using Python, spaCy NLP, and Azure.",
+      "Integrated with the GPT-3.5 API to automatically configure platform data dashboards and search settings from the cleaned data. ",
+      "Developed drag-and-drop dashboard UI, customizable search results, virtualized tables, and customizable permissions systems with React, ChakraUI, DNDKit, ExpressJS, and TypeScript."
+    ],
+    [
+      new Preview("/screenshots/platformsai/laptop-4.png", "laptop")
+    ], // Leave this empty for screenshots
+    [ // up to 11
+      new Preview("/screenshots/platformsai/laptop-1.png", "laptop"),
+      new Preview("/screenshots/platformsai/laptop-2.png", "laptop"),
+      new Preview("/screenshots/platformsai/laptop-3.png", "laptop"),
+      new Preview("/screenshots/platformsai/laptop-4.png", "laptop"),
+      new Preview("/screenshots/platformsai/laptop-5.png", "laptop"),
+      new Preview("/screenshots/platformsai/laptop-6.png", "laptop"),
+      new Preview("/screenshots/platformsai/laptop-7.png", "laptop"),
+      new Preview("/screenshots/platformsai/laptop-8.png", "laptop"),
+      new Preview("/screenshots/platformsai/laptop-9.png", "laptop"),
+      new Preview("/screenshots/platformsai/laptop-10.png", "laptop"),
+      new Preview("/screenshots/platformsai/laptop-11.png", "laptop"),
+    ], // Leave this empty for previews
+    ["kDdC7vBFdHo"], // Leave this empty for videos
+    null, // Leave this blank if no app demo link
+    "https://black-desert-0b666230f.5.azurestaticapps.net/", // Leave this blank if no web demo link
+    null // Leave this blank if no GitHub link
+  ),
   new ProjectItem(
     NCDB_ID,
     "normandy",
@@ -64,6 +110,8 @@ export const PROJECTS = [
     null, // Leave this blank if no web demo link
     null // Leave this blank if no GitHub link
   ),
+
+
   new ProjectItem(
     COSTBOOK_ID,
     "normandy",

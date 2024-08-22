@@ -4,6 +4,7 @@ import {
   EASYMEAL_ID,
   GANTTCHART_ID,
   NCDB_ID,
+  PLATFORMSAI_ID,
   REDDIT_ID,
   RENTR_ID,
   SCATTER_ID,
@@ -34,6 +35,8 @@ const Mockup: React.FC<{ project: ProjectItem }> = (props) => {
   } else if (projectID === COSTBOOK_ID) {
     return <LaptopMockup images={props.project.screenshots} />;
   } else if (projectID === NCDB_ID) {
+    return <LaptopMockup images={props.project.screenshots} />;
+  } else if (projectID === PLATFORMSAI_ID) {
     return <LaptopMockup images={props.project.screenshots} />;
   } else {
     return <div></div>;
