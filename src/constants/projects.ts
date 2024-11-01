@@ -69,7 +69,7 @@ export const PROJECTS = [
     ], // Leave this empty for previews
     ["kDdC7vBFdHo"], // Leave this empty for videos
     null, // Leave this blank if no app demo link
-    "https://black-desert-0b666230f.5.azurestaticapps.net/", // Leave this blank if no web demo link
+    "https://miguelaenlle.notion.site/PlatformsAI-Technical-Writeup-53faa1a98448467aac99e73be131ab26", // Leave this blank if no web demo link
     null // Leave this blank if no GitHub link
   ),
   new ProjectItem(
