@@ -101,11 +101,11 @@ function App() {
               <div ref={aboutRef}>
                 <Hero />
               </div>
-              <div ref={skillsRef}>
-                <Skills />
-              </div>
               <div ref={projectsRef}>
                 <Projects />
+              </div>
+              <div ref={skillsRef}>
+                <Skills />
               </div>
               <div ref={contactRef}>
                 <ContactForm />

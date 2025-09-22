@@ -10,7 +10,8 @@ const Subheader: React.FC<{ delay: number }> = (props) => {
       }}
       className={`text-zinc-600 break-words text-2xl micro:text-xl w-full`}
     >
-      Full Stack Software Engineer
+      Full Stack Software Engineer<br/>
+      Computer Science Major @ UIUC, Provost Scholar<br/>
     </motion.p>
   );
 };
