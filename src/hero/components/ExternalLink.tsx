@@ -15,10 +15,10 @@ const ExternalLink: React.FC<{ delay: number }> = (props) => {
       }}
       className={`group hover:cursor-pointer flex items-center space-x-1`}
     >
-      <p className="text-xl text-cyan-600 group-hover:text-cyan-800 group-hover:font-bold">
+      <p className="text-xl text-cyan-500 group-hover:text-cyan-700">
         View resume
       </p>
-      <ExternalLinkIcon className="h-7 text-cyan-600 group-hover:text-cyan-800" />
+      <ExternalLinkIcon className="h-7 text-cyan-500 group-hover:text-cyan-700" />
     </motion.a>
   );
 };

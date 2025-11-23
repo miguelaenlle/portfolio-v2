@@ -1,27 +1,64 @@
 import { useDisplay } from "../hooks/use-display";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
-const Icon: React.FC<{ link: string; children: JSX.Element; delay: number }> = (
-  props
-) => {
+interface IconProps {
+  link: string;
+  children: JSX.Element;
+  delay: number;
+  label?: string;
+  showLabel?: boolean;
+}
+
+const Icon: React.FC<IconProps> = ({
+  link,
+  children,
+  delay,
+  label,
+  showLabel = false,
+}) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <motion.a
       animate={{ y: [-52, 0], opacity: [0, 1] }}
       transition={{
-        delay: props.delay,
+        delay,
         y: { type: "spring", stiffness: 100 },
         default: { duration: 0.4 },
       }}
-      href={props.link}
-      target={"_blank"}
+      href={link}
+      target="_blank"
     >
-      <div
-        className={`group transition-all bg-zinc-500 hover:bg-zinc-800 hover:cursor-pointer w-12 h-12 p-2 rounded-lg shadow-md hover:shadow-lg ${`block fade-in slide-in-from-top duration-500 delay-${props.delay}`}`}
+      <motion.div
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        transition={{
+          duration: 0.4,
+          ease: "easeInOut",
+        }}
+        className="group bg-slate-700/40 backdrop-blur-sm border-2 border-slate-500 hover:border-slate-300 hover:bg-slate-600/60 hover:cursor-pointer px-3 py-2 rounded-full shadow-md hover:shadow-lg flex items-center justify-center"
       >
-        <div className="transition-all group-hover:scale-110">
-          {props.children}
+        <div className="transition-all group-hover:scale-110 text-slate-300 group-hover:text-white pl-2">
+          {children}
         </div>
-      </div>
+        {label && (
+          <motion.span
+            initial={{ opacity: showLabel ? 1 : 0, width: showLabel ? "auto" : 0 }}
+            animate={
+              showLabel
+                ? { opacity: 1, width: "auto" }
+                : isHovered
+                ? { opacity: 1, width: "auto" }
+                : { opacity: 0, width: 0 }
+            }
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="text-slate-300 group-hover:text-white text-sm font-medium overflow-hidden whitespace-nowrap px-1"
+          >
+            {label}
+          </motion.span>
+        )}
+      </motion.div>
     </motion.a>
   );
 };

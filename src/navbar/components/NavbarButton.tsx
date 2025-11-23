@@ -4,11 +4,18 @@ const NavbarButton: React.FC<{
   delay: number;
   text: string;
   selectedButton: string;
+  backgroundIsTransparent: boolean;
   handleGoToPage: (newPage: string) => void;
 }> = (props) => {
   const handleSelect = () => {
     props.handleGoToPage(props.text);
   };
+
+
+  const buttonColor = props.backgroundIsTransparent ? 
+      (props.selectedButton === props.text ? "text-zinc-200 font-bold" : "text-zinc-400") : 
+      (props.selectedButton === props.text? "text-zinc-800 font-bold" : "text-zinc-500")
+
   return (
     <motion.div
       animate={{ opacity: [0, 1] }}
@@ -19,9 +26,7 @@ const NavbarButton: React.FC<{
       }}
       onClick={handleSelect}
       className={`hover:cursor-pointer ${
-        props.selectedButton === props.text
-          ? "text-zinc-800 font-bold"
-          : "text-zinc-500"
+        buttonColor
       } hover:text-zinc-800 hover:font-bold text-xl p-2`}
     >
       {props.text}

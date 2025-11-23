@@ -4,6 +4,7 @@ import ContactForm from "./contact/pages/ContactForm";
 import Hero from "./hero/pages/Hero";
 import Projects from "./projects/pages/Projects";
 import Skills from "./skills/pages/Skills";
+import Experience from "./experience/pages/Experience";
 import NavbarWrapper from "./navbar/pages/NavbarWrapper";
 import { Redirect, Route, Switch, useLocation } from "react-router-dom";
 import ProjectPage from "./projects/pages/ProjectPage";
@@ -15,6 +16,7 @@ function App() {
   const background = state && state.background;
 
   const aboutRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
@@ -54,18 +56,20 @@ function App() {
   });
 
   useEffect(() => {
-    if (aboutRef && skillsRef && projectsRef && contactRef) {
+    if (aboutRef && experienceRef && skillsRef && projectsRef && contactRef) {
       setRefLocations(fetchAllLocations());
     }
-  }, [aboutRef, skillsRef, projectsRef, contactRef]);
+  }, [aboutRef, experienceRef, skillsRef, projectsRef, contactRef]);
 
   const fetchAllLocations = () => {
     const aboutLocation = fetchLocation(aboutRef);
+    const experienceLocation = fetchLocation(experienceRef);
     const skillsLocation = fetchLocation(skillsRef);
     const projectLocation = fetchLocation(projectsRef);
     const contactLocation = fetchLocation(contactRef);
     const list: { [key: string]: number } = {
       About: aboutLocation - 0,
+      Experience: experienceLocation - 50,
       Skills: skillsLocation - 50,
       Projects: projectLocation - 50,
       Contact: contactLocation + 50,
@@ -99,7 +103,10 @@ function App() {
           >
             <div className="overflow-x-hidden">
               <div ref={aboutRef}>
-                <Hero />
+                <Hero onGoToPage={handleGoToPage} />
+              </div>
+              <div ref={experienceRef}>
+                <Experience />
               </div>
               <div ref={projectsRef}>
                 <Projects />

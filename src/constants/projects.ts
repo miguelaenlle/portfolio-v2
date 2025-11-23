@@ -27,6 +27,45 @@ export const COSTBOOK_ID = "costbook"
 export const NCDB_ID = "ncdb"
 export const PLATFORMSAI_ID = "platformsai"
 
+type Experience = {
+  icon: string;
+  title: string;
+  company: string;
+  startDate: string;
+  endDate?: string;
+}
+
+export const EXPERIENCES: Experience[] = [
+  {
+    icon: "prairielearn",
+    title: "Software Engineering Intern",
+    company: "PrairieLearn, Inc.",
+    startDate: "12/2024",
+    endDate: "Present",
+  },
+  {
+    icon: "google",
+    title: "Software Developer",
+    company: "Google Summer of Code - Emory University",
+    startDate: "06/2025",
+    endDate: "08/2025",
+  },
+  {
+    icon: "pathways",
+    title: "Software Engineering Intern",
+    company: "PATHWAYos",
+    startDate: "06/2023",
+    endDate: "08/2023",
+  },
+  {
+    icon: "normandy",
+    title: "Software Developer",
+    company: "Normandy Remodeling",
+    startDate: "08/2022",
+    endDate: "01/2025",
+  },
+]
+
 export const PROJECTS = [
   new ProjectItem(
     PLATFORMSAI_ID,
