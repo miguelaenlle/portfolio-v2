@@ -8,16 +8,59 @@ const Experience: React.FC = () => {
     <div className="flex flex-col items-center justify-center pb-20 bg-white w-full">
       <Wrapper>
         <Header text="Experience" />
-        <div className="mt-8 space-y-6">
-            {EXPERIENCES.map((experience, index) => (
-                <ExperienceItem
+
+        <div className="mt-10 w-full">
+          <ul className="w-full">
+            {EXPERIENCES.map((experience, index) => {
+              const dateRange = `${experience.startDate} - ${experience.endDate}`;
+              const isFirst = index === 0;
+              const isLast = index === EXPERIENCES.length - 1;
+
+              return (
+                <li
                   key={`${experience.company}-${index}`}
-                  title={experience.title}
-                  company={experience.company}
-                  dateRange={`${experience.startDate} - ${experience.endDate}`}
-                  delay={index * 0.1}
-                  />
-            ))}
+                  className="grid grid-cols-[200px_auto_minmax(0,2fr)] gap-x-6"
+                >
+                  {/* Date on the left */}
+                  <div className="flex items-start pt-[35px] justify-end pr-4">
+                    <p className="text-xs sm:text-sm font-semibold text-gray-500 text-right whitespace-nowrap">
+                      {dateRange}
+                    </p>
+                  </div>
+
+                  {/* Center column: vertical line + dot */}
+                  <div className="flex items-stretch">
+                    <div className="flex flex-col items-center h-full">
+                      {/* Line above dot (hidden for first item) */}
+                      <div
+                        className={`h-[40px] border-l border-gray-200`}
+                      />
+                      {/* Dot */}
+                      <div className="w-3 h-3 rounded-full bg-blue-500 border-4 border-white shadow-md" />
+                      {/* Line below dot (hidden for last item) */}
+                      <div
+                        className={`flex-1 border-l border-gray-200`}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Card on the right */}
+                  <div className="pl-4">
+                    <ExperienceItem
+                      title={experience.title}
+                      company={experience.company}
+                      logo={experience.logo}
+                      dateRange={dateRange}
+                      description={experience.description}
+                      delay={index * 0.1}
+                      showDate={false}
+                      projects={experience.projects}
+                    />
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </Wrapper>
     </div>

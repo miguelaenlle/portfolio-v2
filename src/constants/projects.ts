@@ -27,44 +27,249 @@ export const COSTBOOK_ID = "costbook"
 export const NCDB_ID = "ncdb"
 export const PLATFORMSAI_ID = "platformsai"
 
+type ExperienceProjectLink = {
+  label: string;
+  href: string;
+};
+
+type ExperienceProject = {
+  name: string;
+  bullets: string[];
+  skills: string[];
+  links?: ExperienceProjectLink[];
+};
+
 type Experience = {
-  icon: string;
+  logo: string;
   title: string;
   company: string;
+  description?: string;
   startDate: string;
   endDate?: string;
-}
+  projects?: ExperienceProject[];
+};
 
 export const EXPERIENCES: Experience[] = [
   {
-    icon: "prairielearn",
-    title: "Software Engineering Intern",
+    logo: "icons/organizations/prairielearn.png",
+    title: "Software Engineer Intern",
     company: "PrairieLearn, Inc.",
+    description:
+      "Full-stack intern building AI grading and exam tooling for a 180,000+ student platform.",
     startDate: "12/2024",
     endDate: "Present",
+    projects: [
+      {
+        name: "AI image grading with LLMs",
+        bullets: [
+          "Built an LLM-driven handwriting grading pipeline that cut manual grading from about a week to roughly one hour for high-stakes exams.",
+          "Hooked up APIs to retrieve submissions and rubric data, feed rich context into the model, and record grades and rationales.",
+          "Added cost tracking, batch processing and evaluation reports to safely deploy AI grading across courses."
+        ],
+        skills: [
+          "TypeScript",
+          "React",
+          "Python",
+          "PostgreSQL",
+          "OpenAI API",
+          "Image processing",
+          "LLMs"
+        ],
+        // Example of how to add links:
+        // links: [{ label: "Portfolio writeup", href: "https://miguelaenlle.com" }],
+      },
+      {
+        name: "High-throughput image capture API",
+        bullets: [
+          "Engineered an image-capture API delivering ~1 ms captures for handwritten exam submissions used by over 180,000 students.",
+          "Optimized request handling and upload pipeline to stay reliable under heavy exam-time spikes."
+        ],
+        skills: ["TypeScript", "React", "WebSockets", "Performance", "Image capture"]
+      },
+      {
+        name: "Instructor navigation redesign",
+        bullets: [
+          "Redesigned staff navigation across 80+ pages to streamline grading, exam setup and course management workflows.",
+          "Improved usability for more than 2,000 course instructors by restructuring information architecture and page flows."
+        ],
+        skills: ["React", "TypeScript", "UI/UX", "Design systems"]
+      }
+    ]
   },
   {
-    icon: "google",
+    logo: "icons/organizations/gsoc.png",
     title: "Software Developer",
     company: "Google Summer of Code - Emory University",
+    description:
+      "Research and open-source work on MRI-based disease diagnosis with ML and generative models.",
     startDate: "06/2025",
-    endDate: "08/2025",
+    endDate: "Present",
+    projects: [
+      {
+        name: "MRI segmentation ML pipeline",
+        bullets: [
+          "Engineered a PyTorch pipeline to train and evaluate automated MRI segmentation models for stomach disease diagnosis.",
+          "Improved segmentation accuracy from roughly 39% to 80% through model tuning, loss adjustments and validation."
+        ],
+        skills: ["Python", "PyTorch", "Linux", "Medical imaging", "Segmentation"]
+      },
+      {
+        name: "Generative data augmentation",
+        bullets: [
+          "Trained state-of-the-art generative models to synthesize realistic MRI scans, expanding limited proprietary data by about 1,600%.",
+          "Integrated synthetic data into the training pipeline with experiments to measure downstream performance impact."
+        ],
+        skills: [
+          "Generative AI",
+          "Diffusion models",
+          "GANs",
+          "PyTorch",
+          "Data augmentation"
+        ]
+      }
+    ]
   },
   {
-    icon: "pathways",
+    logo: "icons/organizations/hackillinois.png",
+    title: "Web Team Lead",
+    company: "HackIllinois",
+    description:
+      "Leading the web platform for UIUC’s flagship 1,000+ attendee hackathon.",
+    startDate: "07/2025",
+    endDate: "Present",
+    projects: [
+      {
+        name: "HackIllinois 2026 website & registration",
+        bullets: [
+          "Leading redesign of the public site, registration and admin web systems for 1,000+ attendees.",
+          "Owning technical direction for the React/Next.js codebase and coordinating work across the student dev team."
+        ],
+        skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Leadership"]
+      },
+      {
+        name: "Admin & sponsor tooling",
+        bullets: [
+          "Revamping the admin site to streamline applicant, event and sponsor data management workflows.",
+          "Engineering a web-based platform to automate corporate outreach task management for over 500 sponsor contacts."
+        ],
+        skills: [
+          "Full-stack",
+          "Internal tools",
+          "Workflow automation",
+          "APIs",
+          "PostgreSQL"
+        ]
+      },
+      {
+        name: "HackIllinois 2025 platform",
+        bullets: [
+          "Previously created the HackIllinois site and registration system used by 1,000+ students with React, TypeScript and Next.js.",
+          "Collaborated closely with designers and organizers using Notion, Figma and GitHub to deliver features on tight timelines."
+        ],
+        skills: [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Figma",
+          "Notion",
+          "GitHub",
+          "Team collaboration"
+        ]
+      }
+    ]
+  },
+  {
+    logo: "icons/organizations/rp.png",
+    title: "Software Developer",
+    company: "Reflections Projections",
+    description:
+      "Built tools for sponsors and attendees at the Midwest’s largest collegiate tech conference.",
+    startDate: "07/2025",
+    endDate: "Present",
+    projects: [
+      {
+        name: "Sponsor resumebook platform",
+        bullets: [
+          "Revamped the sponsor resumebook, improving search, secure export and quick navigation across 2,000+ resumes."
+        ],
+        skills: ["React", "TypeScript", "Search", "Security", "Performance"]
+      },
+      {
+        name: "Interactive conference pages",
+        bullets: [
+          "Developed interactive schedule, speaker and Q&A pages for the conference website."
+        ],
+        skills: ["React", "TypeScript", "UI components", "Accessibility"]
+      }
+    ]
+  },
+  {
+    logo: "icons/organizations/pathways.png",
     title: "Software Engineering Intern",
     company: "PATHWAYos",
+    description:
+      "Full-stack intern on a 500,000-student work-based learning platform.",
     startDate: "06/2023",
     endDate: "08/2023",
+    projects: [
+      {
+        name: "Experience matching UI",
+        bullets: [
+          "Created a work-based learning experience matching interface for a 500,000-student platform using React and TypeScript."
+        ],
+        skills: ["React", "TypeScript", "Product engineering", "Design systems"]
+      },
+      {
+        name: "Low-latency matching API",
+        bullets: [
+          "Built a Swift/MySQL API to match students to opportunities using preferences, location, experience and availability."
+        ],
+        skills: ["Swift", "MySQL", "API design", "Backend", "Performance"]
+      },
+      {
+        name: "Iterative feature delivery",
+        bullets: [
+          "Iterated on features using feedback and peer reviews from engineering and product teams via GitHub and Slack."
+        ],
+        skills: ["GitHub", "Slack", "Code review", "Agile"]
+      }
+    ]
   },
   {
-    icon: "normandy",
+    logo: "icons/organizations/normandy.png",
     title: "Software Developer",
     company: "Normandy Remodeling",
+    description:
+      "Built internal platforms and automation for a remodeling company.",
     startDate: "08/2022",
     endDate: "01/2025",
-  },
-]
+    projects: [
+      {
+        name: "Customer & project management platform",
+        bullets: [
+          "Architected a cloud-based platform managing logistical and financial data on 33,000 customers and 9,900 projects.",
+          "Implemented frontend in React, CSS and TypeScript, with backend in Node.js, Express, MongoDB and Azure."
+        ],
+        skills: [
+          "React",
+          "TypeScript",
+          "Node.js",
+          "Express",
+          "MongoDB",
+          "Azure",
+          "Full-stack"
+        ]
+      },
+      {
+        name: "Document & invoicing automation",
+        bullets: [
+          "Automated document, email and invoicing workflows for around 100 employees via Azure and OneDrive/Office 365 APIs."
+        ],
+        skills: ["Azure", "Office 365 APIs", "Automation", "Integration"]
+      }
+    ]
+  }
+];
 
 export const PROJECTS = [
   new ProjectItem(
