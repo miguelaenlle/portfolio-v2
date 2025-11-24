@@ -3,22 +3,22 @@ import Wrapper from "../../shared/components/Wrapper";
 
 const About: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center py-12 pt-20 bg-white px-4">
+    <div className="flex flex-col items-center justify-center py-12 pt-20 bg-white">
       <Wrapper>
-        <div className="flex flex-col sm:flex-row gap-8 md:gap-20 items-center mx-auto max-w-5xl">
+        <div className="flex flex-col sm:flex-row gap-8 md:gap-12 items-center justify-start mx-auto max-w-[1600px]">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="flex-shrink-0 w-full sm:w-auto shadow-lg rounded-lg"
+            className="flex-shrink-0 w-full sm:w-auto max-w-[400px] shadow-lg rounded-lg"
           >
             <img
               src="/images/miguel.jpg"
               alt="Miguel Aenlle"
               style={{ aspectRatio: "1 / 1" }}
-              className="w-full sm:w-80 rounded-lg object-cover"
+              className="w-full sm:w-80 max-w-[400px] sm:max-w-80 rounded-lg object-cover"
             />
           </motion.div>
 
@@ -28,7 +28,7 @@ const About: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="flex-1 w-full"
+            className="flex-1 w-full max-w-2xl"
           >
             <motion.h2
               initial={{ opacity: 0 }}

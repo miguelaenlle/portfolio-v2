@@ -11,12 +11,12 @@ const Experience: React.FC = () => {
         <div className="mt-8 space-y-6">
             {EXPERIENCES.map((experience, index) => (
                 <ExperienceItem
-                key={`${experience.company}-${index}`}
-                title={experience.title}
-                company={experience.company}
-                dateRange={`${experience.startDate} - ${experience.endDate}`}
-                delay={index * 0.1}
-                />
+                  key={`${experience.company}-${index}`}
+                  title={experience.title}
+                  company={experience.company}
+                  dateRange={`${experience.startDate} - ${experience.endDate}`}
+                  delay={index * 0.1}
+                  />
             ))}
         </div>
       </Wrapper>

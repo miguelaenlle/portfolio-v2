@@ -12,7 +12,7 @@ const Navbar: React.FC<{
       }`}
     >
       {!props.isTransparent && (
-        <p className="text-2xl font-bold mr-2">Miguel Aenlle</p>
+        <p className="text-2xl font-bold">Miguel Aenlle</p>
       )}
       {["About", "Projects", "Skills", "Contact"].map((buttonText, index) => {
         return (
