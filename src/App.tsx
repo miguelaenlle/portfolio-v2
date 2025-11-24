@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Footer from "./footer/pages/Footer";
 import ContactForm from "./contact/pages/ContactForm";
 import Hero from "./hero/pages/Hero";
+import About from "./about/pages/About";
 import Projects from "./projects/pages/Projects";
 import Skills from "./skills/pages/Skills";
 import Experience from "./experience/pages/Experience";
@@ -104,6 +105,7 @@ function App() {
             <div className="overflow-x-hidden">
               <div ref={aboutRef}>
                 <Hero onGoToPage={handleGoToPage} />
+                <About />
               </div>
               <div ref={experienceRef}>
                 <Experience />

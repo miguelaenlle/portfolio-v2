@@ -5,7 +5,7 @@ import { EXPERIENCES } from "../../constants/projects";
 
 const Experience: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center py-20 bg-white w-full">
+    <div className="flex flex-col items-center justify-center pb-20 bg-white w-full">
       <Wrapper>
         <Header text="Experience" />
         <div className="mt-8 space-y-6">

@@ -22,13 +22,13 @@ const Hero: React.FC<{
               y: { type: "spring", stiffness: 100 },
               default: { duration: 0.5 },
             }}
-            className="text-zinc-200 font-bold text-7xl micro:text-5xl"
+            className="text-zinc-200 font-bold text-5xl sm:text-6xl md:text-7xl micro:text-5xl"
           >
             Miguel Aenlle
           </motion.p>
           <Subheader delay={ANIMATION_OFFSET+0.1}/>
           <br />
-          <div className="flex space-x-3 pb-3">
+          <div className="flex flex-wrap gap-2 sm:gap-3 pb-3 justify-start">
             <Resume delay={0.2 + ANIMATION_OFFSET} />
             <Linkedin delay={0.3 + ANIMATION_OFFSET} />
             <Github delay={0.4 + ANIMATION_OFFSET} />
@@ -36,7 +36,7 @@ const Hero: React.FC<{
           </div>
         </div>
     </BackgroundPaths>
-    <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-slate-800 to-transparent pointer-events-none">
+    <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-slate-900 to-transparent pointer-events-none">
 
     </div>
     </>

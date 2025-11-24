@@ -11,7 +11,7 @@ const Subheader: React.FC<{ delay: number }> = (props) => {
         }}
         className={`text-zinc-300 break-words text-2xl micro:text-xl w-full my-2 mt-5`}
       >
-        Software Engineer | CS @ UIUC
+        Software Engineer | CS @ UIUC | Provost Scholar
       </motion.p>
     </>
   );
