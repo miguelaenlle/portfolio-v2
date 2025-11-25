@@ -1,11 +1,11 @@
 import { ArrowsExpandIcon } from "@heroicons/react/outline";
-import { useEffect } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import ProjectItem from "../../shared/models/ProjectItem";
 import SkillItem from "../../skills/components/SkillItem";
 import Mockup from "./Mockup";
 const Project: React.FC<{
   project: ProjectItem;
+  last?: boolean;
 }> = (props) => {
   const history = useHistory();
   const location = useLocation();
@@ -21,7 +21,7 @@ const Project: React.FC<{
   };
 
   return (
-    <div className="lg:flex py-40 border-b-2 border-zinc-200">
+    <div className={`lg:flex py-40 border-zinc-200 ${props.last ? "" : "border-b-2 border-zinc-200"}`}>
       <div className="flex items-start lg:hidden w-full h-50 pb-5">
         {mockup}
       </div>

@@ -70,7 +70,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
       custom={delay}
     >
       {/* Header */}
-      <div className="bg-zinc-100 p-3 flex flex-col sm:flex-row gap-4 sm:items-center rounded-t-lg">
+      <div className="bg-zinc-100 p-3 flex gap-4 items-center rounded-t-lg">
         {logo && (
           <div className="flex-shrink-0">
             <div className="h-16 w-16 bg-zinc-200 flex items-center justify-center overflow-hidden rounded-lg">
@@ -87,7 +87,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
           <h3 className="text-lg sm:text-xl font-bold text-gray-900">
             {title}
           </h3>
-          <p className="text-gray-600 font-medium text-sm sm:text-base">
+          <p className="text-gray-600 font-medium text-base">
             {company}
           </p>
           {showDate && dateRange && (
@@ -108,10 +108,10 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              className="text-xs sm:text-sm bg-white p-3 rounded-lg"
+              className="text-xs text-sm bg-white p-3 rounded-lg"
             >
-              <div className="flex flex-wrap items-center gap-2 mb-1">
-                <h4 className="font-semibold text-gray-900 text-sm sm:text-base">
+              <div className="flex flex-wrap items-center mb-2 gap-2">
+                <h4 className="font-semibold text-gray-900 text-base">
                   {project.name}
                 </h4>
                 {project.links &&
@@ -123,8 +123,8 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
                       className="text-cyan-600"
                     >
                       <div className="flex items-center gap-1 group hover:cursor-pointer" key={link.href}>
-                        <ExternalLinkIcon className="h-5 w-5 text-cyan-600 group-hover:text-cyan-800" />
-                        <p className="text-xs sm:text-sm group-hover:text-cyan-800">
+                        <ExternalLinkIcon className="h-6 w-6 text-cyan-600 group-hover:text-cyan-800" />
+                        <p className="text-base group-hover:text-cyan-800">
                           {link.label}
                         </p>
                       </div>
@@ -132,12 +132,14 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
                   ))}
               </div>
               {project.bullets && project.bullets.length > 0 && (
-                <ul className="list-disc list-inside text-gray-700">
+                <ul className="list-disc list-outside pl-5 text-gray-700 text-base leading-relaxed space-y-1">
                   {project.bullets.map((bullet, idx) => (
-                    <li key={idx}>{bullet}</li>
+                    <li key={idx}>
+                      {bullet}
+                    </li>
                   ))}
                 </ul>
-            )}
+              )}
             </motion.div>
           ))}
         </div>

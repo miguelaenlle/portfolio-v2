@@ -36,9 +36,6 @@ const Hero: React.FC<{
           </div>
         </div>
     </BackgroundPaths>
-    <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-slate-900 to-transparent pointer-events-none">
-
-    </div>
     </>
   );
 };
