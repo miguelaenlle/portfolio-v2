@@ -9,8 +9,8 @@ const Projects: React.FC<{}> = (props) => {
     <Wrapper>
       <React.Fragment>
         <Header text="Projects" />
-        {PROJECTS.map((project) => {
-          return <Project key={project.id} project={project} />;
+        {PROJECTS.map((project, index) => {
+          return <Project key={project.id} project={project} last={index === PROJECTS.length - 1} />;
         })}
       </React.Fragment>
     </Wrapper>

@@ -63,18 +63,22 @@ export function BackgroundPaths({
 }: BackgroundPathsProps) {
 
     const handleClickLearnMore = () => {
-        onGoToPage("Projects");
+        onGoToPage("About");
     }
 
     return (
-        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-900 to-cyan-950 px-4">
-        <div className="absolute inset-0 opacity-60">
-            <FloatingPaths position={1} />
-            <FloatingPaths position={-1} />
-        </div>
-        <div className="relative z-10 container mx-auto px-2 sm:px-4 md:px-6 text-center">
-            {children}
-        </div>
+        <div className="relative h-[100dvh] min-h-[500px] w-full flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-900 to-cyan-950 px-4">
+          <div className="absolute inset-0 opacity-60">
+              <FloatingPaths position={1} />
+              <FloatingPaths position={-1} />
+          </div>
+          <div className="relative z-10 container mx-auto px-2 sm:px-4 md:px-6 text-center">
+              {children}
+          </div>
+
+          <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-slate-900 to-transparent pointer-events-none">
+
+          </div>
 
           <motion.div
             animate={{ y: [-20, 0], opacity: [0, 1] }}

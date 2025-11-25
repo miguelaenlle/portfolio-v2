@@ -10,17 +10,35 @@ const NavbarWrapper: React.FC<{
   const windowDimensions = useWindowDimensions();
   const [isTransparent, setIsTransparent] = useState(true);
   useEffect(() => {
+    let timeoutId: number | null = null;
+
     const handleScroll = () => {
-      const location = window.scrollY;
-      const show = location < 100;
-      if (show) {
-        setIsTransparent(true);
-      } else {
-        setIsTransparent(false);
+      // Clear any pending timeout
+      if (timeoutId !== null) {
+        window.clearTimeout(timeoutId);
+      }
+
+      // Debounce: run the logic after 100ms of no scrolling
+      timeoutId = window.setTimeout(() => {
+        const location = window.scrollY;
+        console.log("location", location);
+        const show = location < 100;
+        setIsTransparent(show);
+      }, 100);
+    };
+
+    // Set initial value on mount
+    handleScroll();
+
+    document.addEventListener("scroll", handleScroll);
+
+    return () => {
+      // Cleanup: remove listener and clear timeout
+      document.removeEventListener("scroll", handleScroll);
+      if (timeoutId !== null) {
+        window.clearTimeout(timeoutId);
       }
     };
-    handleScroll()
-    document.addEventListener("scroll", handleScroll);
   }, []);
   return (
     <div >

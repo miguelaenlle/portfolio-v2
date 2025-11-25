@@ -51,7 +51,7 @@ const Experience: React.FC = () => {
                   {/* Card on the right */}
                   <div className="pl-4">
                     {/* Mobile date above card */}
-                    <p className="text-sm font-semibold text-gray-500 mb-2 sm:hidden">
+                    <p className="text-md md:text-sm font-semibold text-gray-500 mb-2 sm:hidden">
                       {dateRange}
                     </p>
 

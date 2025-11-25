@@ -103,8 +103,8 @@ function App() {
             handleGoToPage={handleGoToPage}
           >
             <div className="overflow-x-hidden">
+              <Hero onGoToPage={handleGoToPage} />
               <div ref={aboutRef}>
-                <Hero onGoToPage={handleGoToPage} />
                 <About />
               </div>
               <div ref={experienceRef}>
