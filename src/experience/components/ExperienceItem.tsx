@@ -1,3 +1,4 @@
+import { ExternalLinkIcon } from "@heroicons/react/solid";
 import { motion, Variants } from "framer-motion";
 
 interface ExperienceProjectLink {
@@ -14,6 +15,7 @@ interface ExperienceProject {
 
 interface ExperienceItemProps {
   logo?: string;
+  logoFull?: boolean;
   title: string;
   company: string;
   dateRange?: string;
@@ -50,6 +52,7 @@ const projectVariants: Variants = {
 
 const ExperienceItem: React.FC<ExperienceItemProps> = ({
   logo,
+  logoFull,
   title,
   company,
   dateRange,
@@ -65,17 +68,16 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       custom={delay}
-      className="rounded-lg overflow-hidden"
     >
       {/* Header */}
-      <div className="bg-zinc-100 p-3 flex flex-col sm:flex-row gap-4 sm:items-center">
+      <div className="bg-zinc-100 p-3 flex flex-col sm:flex-row gap-4 sm:items-center rounded-t-lg">
         {logo && (
           <div className="flex-shrink-0">
-            <div className="h-16 w-16 bg-zinc-200 rounded-lg flex items-center justify-center overflow-hidden">
+            <div className="h-16 w-16 bg-zinc-200 flex items-center justify-center overflow-hidden rounded-lg">
               <img
                 src={logo}
                 alt={company}
-                className="w-full h-full object-contain p-2"
+                className={`w-full h-full object-contain ${logoFull ? "p-0" : "p-2"}`}
               />
             </div>
           </div>
@@ -98,7 +100,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
 
       {/* Projects */}
       {projects && projects.length > 0 && (
-        <div className="space-y-3 mb-3 bg-zinc-100 px-3 pb-3 pt-2">
+        <div className="space-y-3 mb-3 bg-zinc-100 px-3 pb-3 pt-2 rounded-b-lg">
           {projects.map((project, idx) => (
             <motion.div
               key={`${project.name}-${idx}`}
@@ -115,19 +117,27 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
                 {project.links &&
                   project.links.map((link) => (
                     <a
-                      key={link.href}
                       href={link.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-[11px] sm:text-xs text-blue-600 hover:underline"
+                      className="text-cyan-600"
                     >
-                      {link.label}
+                      <div className="flex items-center gap-1 group hover:cursor-pointer" key={link.href}>
+                        <ExternalLinkIcon className="h-5 w-5 text-cyan-600 group-hover:text-cyan-800" />
+                        <p className="text-xs sm:text-sm group-hover:text-cyan-800">
+                          {link.label}
+                        </p>
+                      </div>
                     </a>
                   ))}
               </div>
-              {project.bullets?.[0] && (
-                <p className="text-gray-700">{project.bullets[0]}</p>
-              )}
+              {project.bullets && project.bullets.length > 0 && (
+                <ul className="list-disc list-inside text-gray-700">
+                  {project.bullets.map((bullet, idx) => (
+                    <li key={idx}>{bullet}</li>
+                  ))}
+                </ul>
+            )}
             </motion.div>
           ))}
         </div>

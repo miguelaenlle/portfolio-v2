@@ -41,6 +41,7 @@ type ExperienceProject = {
 
 type Experience = {
   logo: string;
+  logoFull?: boolean;
   title: string;
   company: string;
   description?: string;
@@ -52,6 +53,7 @@ type Experience = {
 export const EXPERIENCES: Experience[] = [
   {
     logo: "icons/organizations/prairielearn.png",
+    logoFull: true,
     title: "Software Engineer Intern",
     company: "PrairieLearn, Inc.",
     description:
@@ -60,11 +62,13 @@ export const EXPERIENCES: Experience[] = [
     endDate: "Present",
     projects: [
       {
-        name: "AI image grading with LLMs",
+        name: "LLM-Driven Handwriting Grading Pipeline",
         bullets: [
-          "Built an LLM-driven handwriting grading pipeline that cut manual grading from about a week to roughly one hour for high-stakes exams.",
-          "Hooked up APIs to retrieve submissions and rubric data, feed rich context into the model, and record grades and rationales.",
-          "Added cost tracking, batch processing and evaluation reports to safely deploy AI grading across courses."
+          "Developed an AI-powered pipeline to auto-grade handwritten exams.",
+          "Improved accuracy through retrieval-augmented generation, contrast optimization, and rotation correction.",
+          "Incorporated cost tracking, rate limiting, parallel batch jobs, and statistical reports.",
+          "Achieved 95% grading accuracy across thousands of submissions at UIUC.",
+          "Utilized TypeScript, React, Python, OpenCV, PostgreSQL Vector Databases, Google Gemini, OpenAI, and Anthropic."
         ],
         skills: [
           "TypeScript",
@@ -74,26 +78,27 @@ export const EXPERIENCES: Experience[] = [
           "OpenAI API",
           "Image processing",
           "LLMs"
-        ],
-        // Example of how to add links:
-        // links: [{ label: "Portfolio writeup", href: "https://miguelaenlle.com" }],
+        ]
       },
       {
-        name: "High-throughput image capture API",
+        name: "Image Capture System",
         bullets: [
-          "Engineered an image-capture API delivering ~1 ms captures for handwritten exam submissions used by over 180,000 students.",
-          "Optimized request handling and upload pipeline to stay reliable under heavy exam-time spikes."
+          "Engineered real-time image capture UI and API for handwritten submissions delivering 1ms captures for 180,000+ students.",
+          "Developed with TypeScript, WebSockets, PostgreSQL, and Python."
         ],
-        skills: ["TypeScript", "React", "WebSockets", "Performance", "Image capture"]
+        skills: ["TypeScript", "React", "WebSockets", "Performance", "Image capture"],
+        links: [{ label: "Link", href: "https://github.com/PrairieLearn/PrairieLearn/pull/12061" }]
       },
       {
-        name: "Instructor navigation redesign",
+        name: "Staff Navigation System Redesign",
         bullets: [
-          "Redesigned staff navigation across 80+ pages to streamline grading, exam setup and course management workflows.",
-          "Improved usability for more than 2,000 course instructors by restructuring information architecture and page flows."
+          "Redesigned staff navigation across 80+ pages, enhancing experience for 2,000+ instructors.",
+          "Built with React, TypeScript, HTML, and CSS."
         ],
-        skills: ["React", "TypeScript", "UI/UX", "Design systems"]
+        skills: ["React", "TypeScript", "UI/UX", "Design systems"],
+        links: [{ label: "Link", href: "https://github.com/PrairieLearn/PrairieLearn/discussions/12230" }]
       }
+
     ]
   },
   {
@@ -106,26 +111,13 @@ export const EXPERIENCES: Experience[] = [
     endDate: "Present",
     projects: [
       {
-        name: "MRI segmentation ML pipeline",
+        name: "Diffusion-Augmented MRI Segmentation Pipeline",
         bullets: [
-          "Engineered a PyTorch pipeline to train and evaluate automated MRI segmentation models for stomach disease diagnosis.",
-          "Improved segmentation accuracy from roughly 39% to 80% through model tuning, loss adjustments and validation."
+          "Engineered PyTorch-based pipeline for diffusion-augmented MRI segmentation to improve stomach disease diagnosis.",
+          "Improved segmentation accuracy from 40% to 80% through augmentation and hyperparameter/pipeline tuning."
         ],
-        skills: ["Python", "PyTorch", "Linux", "Medical imaging", "Segmentation"]
-      },
-      {
-        name: "Generative data augmentation",
-        bullets: [
-          "Trained state-of-the-art generative models to synthesize realistic MRI scans, expanding limited proprietary data by about 1,600%.",
-          "Integrated synthetic data into the training pipeline with experiments to measure downstream performance impact."
-        ],
-        skills: [
-          "Generative AI",
-          "Diffusion models",
-          "GANs",
-          "PyTorch",
-          "Data augmentation"
-        ]
+        skills: ["Python", "PyTorch", "Linux", "Medical imaging", "Segmentation"],
+        links: [{ label: "Link", href: "https://summerofcode.withgoogle.com/programs/2025/projects/QB45Mcpx" }]
       }
     ]
   },
@@ -139,43 +131,14 @@ export const EXPERIENCES: Experience[] = [
     endDate: "Present",
     projects: [
       {
-        name: "HackIllinois 2026 website & registration",
+        name: "HackIllinois 2026 Website and Registration",
         bullets: [
-          "Leading redesign of the public site, registration and admin web systems for 1,000+ attendees.",
-          "Owning technical direction for the React/Next.js codebase and coordinating work across the student dev team."
+          "Leading redesign of the main site, registration and admin web systems for UIUC's 1,000+ attendee flagship hackathon.",
+          "Owning technical direction for the React/Next.js codebase and coordinating work across the student development team."
         ],
-        skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Leadership"]
+        skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Leadership"],
+        links: [{ label: "Link", href: "https://github.com/HackIllinois" }]
       },
-      {
-        name: "Admin & sponsor tooling",
-        bullets: [
-          "Revamping the admin site to streamline applicant, event and sponsor data management workflows.",
-          "Engineering a web-based platform to automate corporate outreach task management for over 500 sponsor contacts."
-        ],
-        skills: [
-          "Full-stack",
-          "Internal tools",
-          "Workflow automation",
-          "APIs",
-          "PostgreSQL"
-        ]
-      },
-      {
-        name: "HackIllinois 2025 platform",
-        bullets: [
-          "Previously created the HackIllinois site and registration system used by 1,000+ students with React, TypeScript and Next.js.",
-          "Collaborated closely with designers and organizers using Notion, Figma and GitHub to deliver features on tight timelines."
-        ],
-        skills: [
-          "React",
-          "Next.js",
-          "TypeScript",
-          "Figma",
-          "Notion",
-          "GitHub",
-          "Team collaboration"
-        ]
-      }
     ]
   },
   {
@@ -188,51 +151,40 @@ export const EXPERIENCES: Experience[] = [
     endDate: "Present",
     projects: [
       {
-        name: "Sponsor resumebook platform",
+        name: "Sponsor Resumebook Platform",
         bullets: [
           "Revamped the sponsor resumebook, improving search, secure export and quick navigation across 2,000+ resumes."
         ],
-        skills: ["React", "TypeScript", "Search", "Security", "Performance"]
+        skills: ["React", "TypeScript", "Search", "Security", "Performance"],
+        links: [{ label: "Link", href: "https://github.com/ReflectionsProjections/rp-web/pull/24" }]
       },
       {
-        name: "Interactive conference pages",
+        name: "Interactive Conference Site",
         bullets: [
-          "Developed interactive schedule, speaker and Q&A pages for the conference website."
+          "Developed interactive, bespoke schedule, speaker and Q&A pages for the Midwest's largest collegiate tech conference."
         ],
-        skills: ["React", "TypeScript", "UI components", "Accessibility"]
+        skills: ["React", "TypeScript", "UI components", "Accessibility"],
+        links: [{ label: "Link", href: "https://reflectionsprojections.org/" }]
       }
     ]
   },
   {
     logo: "icons/organizations/pathways.png",
-    title: "Software Engineering Intern",
-    company: "PATHWAYos",
+    title: "Software Engineer Intern",
+    company: "PATHWAYos (acquired by Vector Solutions)",
     description:
       "Full-stack intern on a 500,000-student work-based learning platform.",
     startDate: "06/2023",
     endDate: "08/2023",
     projects: [
       {
-        name: "Experience matching UI",
+        name: "Work-based Learning Experience Matching System",
         bullets: [
-          "Created a work-based learning experience matching interface for a 500,000-student platform using React and TypeScript."
+          "Created a work-based learning experience system for a 500,000-student platform.",
+          'Engineered API to rank experiences based on preferences, location, experience, and availability with Swift and MySQL.'
         ],
         skills: ["React", "TypeScript", "Product engineering", "Design systems"]
       },
-      {
-        name: "Low-latency matching API",
-        bullets: [
-          "Built a Swift/MySQL API to match students to opportunities using preferences, location, experience and availability."
-        ],
-        skills: ["Swift", "MySQL", "API design", "Backend", "Performance"]
-      },
-      {
-        name: "Iterative feature delivery",
-        bullets: [
-          "Iterated on features using feedback and peer reviews from engineering and product teams via GitHub and Slack."
-        ],
-        skills: ["GitHub", "Slack", "Code review", "Agile"]
-      }
     ]
   },
   {
@@ -245,9 +197,10 @@ export const EXPERIENCES: Experience[] = [
     endDate: "01/2025",
     projects: [
       {
-        name: "Customer & project management platform",
+        name: "Cloud-based Customer Database Platform",
         bullets: [
-          "Architected a cloud-based platform managing logistical and financial data on 33,000 customers and 9,900 projects.",
+          "Modernized deprecated 1999 customer database into cloud-based platform.",
+          "Manages data on 33,000+ customers, 9,900+ projects, and 100,000+ leads.",
           "Implemented frontend in React, CSS and TypeScript, with backend in Node.js, Express, MongoDB and Azure."
         ],
         skills: [
@@ -261,14 +214,21 @@ export const EXPERIENCES: Experience[] = [
         ]
       },
       {
-        name: "Document & invoicing automation",
+        name: "Invoicing Automation System",
         bullets: [
-          "Automated document, email and invoicing workflows for around 100 employees via Azure and OneDrive/Office 365 APIs."
+          "Automated document, email and invoicing workflows for 100+ employees via Azure and OneDrive/Office 365 APIs.",
+        ],
+        skills: ["Azure", "Office 365 APIs", "Automation", "Integration"]
+      },
+      {
+        name: "Cloud-based Costbook",
+        bullets: [
+          "Engineered customizable, cloud-based costbook to enable price-tracking of 1,300+ cost items (HVAC, Plumbing, etc.) per job."
         ],
         skills: ["Azure", "Office 365 APIs", "Automation", "Integration"]
       }
     ]
-  }
+  },
 ];
 
 export const PROJECTS = [
