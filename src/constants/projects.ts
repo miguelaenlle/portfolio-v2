@@ -27,6 +27,210 @@ export const COSTBOOK_ID = "costbook"
 export const NCDB_ID = "ncdb"
 export const PLATFORMSAI_ID = "platformsai"
 
+type ExperienceProjectLink = {
+  label: string;
+  href: string;
+};
+
+type ExperienceProject = {
+  name: string;
+  bullets: string[];
+  skills: string[];
+  links?: ExperienceProjectLink[];
+};
+
+type Experience = {
+  logo: string;
+  logoFull?: boolean;
+  title: string;
+  company: string;
+  description?: string;
+  startDate: string;
+  endDate?: string;
+  projects?: ExperienceProject[];
+};
+
+export const EXPERIENCES: Experience[] = [
+  {
+    logo: "icons/organizations/prairielearn.png",
+    logoFull: true,
+    title: "Software Engineer Intern",
+    company: "PrairieLearn, Inc.",
+    description:
+      "Full-stack intern building AI grading and exam tooling for a 180,000+ student platform.",
+    startDate: "12/2024",
+    endDate: "Present",
+    projects: [
+      {
+        name: "LLM-Driven Handwriting Grading Pipeline",
+        bullets: [
+          "Developed an AI-powered pipeline to auto-grade handwritten exams.",
+          "Improved accuracy through retrieval-augmented generation, contrast optimization, and rotation correction.",
+          "Incorporated cost tracking, rate limiting, parallel batch jobs, and statistical reports.",
+          "Achieved 95% grading accuracy across thousands of submissions at UIUC.",
+          "Utilized TypeScript, React, Python, OpenCV, PostgreSQL Vector Databases, Google Gemini, OpenAI, and Anthropic."
+        ],
+        skills: [
+          "TypeScript",
+          "React",
+          "Python",
+          "PostgreSQL",
+          "OpenAI API",
+          "Image processing",
+          "LLMs"
+        ]
+      },
+      {
+        name: "Image Capture System",
+        bullets: [
+          "Engineered real-time image capture UI and API for handwritten submissions delivering 1ms captures for 180,000+ students.",
+          "Developed with TypeScript, WebSockets, PostgreSQL, and Python."
+        ],
+        skills: ["TypeScript", "React", "WebSockets", "Performance", "Image capture"],
+        links: [{ label: "Link", href: "https://github.com/PrairieLearn/PrairieLearn/pull/12061" }]
+      },
+      {
+        name: "Staff Navigation System Redesign",
+        bullets: [
+          "Redesigned staff navigation across 80+ pages, enhancing experience for 2,000+ instructors.",
+          "Built with React, TypeScript, HTML, and CSS."
+        ],
+        skills: ["React", "TypeScript", "UI/UX", "Design systems"],
+        links: [{ label: "Link", href: "https://github.com/PrairieLearn/PrairieLearn/discussions/12230" }]
+      }
+
+    ]
+  },
+  {
+    logo: "icons/organizations/gsoc.png",
+    title: "Software Developer",
+    company: "Google Summer of Code - Emory University",
+    description:
+      "Research and open-source work on MRI-based disease diagnosis with ML and generative models.",
+    startDate: "06/2025",
+    endDate: "Present",
+    projects: [
+      {
+        name: "Diffusion-Augmented MRI Segmentation Pipeline",
+        bullets: [
+          "Engineered PyTorch-based pipeline for diffusion-augmented MRI segmentation to improve stomach disease diagnosis.",
+          "Improved segmentation accuracy from 40% to 80% through augmentation and hyperparameter/pipeline tuning."
+        ],
+        skills: ["Python", "PyTorch", "Linux", "Medical imaging", "Segmentation"],
+        links: [{ label: "Link", href: "https://summerofcode.withgoogle.com/programs/2025/projects/QB45Mcpx" }]
+      }
+    ]
+  },
+  {
+    logo: "icons/organizations/hackillinois.png",
+    title: "Web Team Lead",
+    company: "HackIllinois",
+    description:
+      "Leading the web platform for UIUC’s flagship 1,000+ attendee hackathon.",
+    startDate: "07/2025",
+    endDate: "Present",
+    projects: [
+      {
+        name: "HackIllinois 2026 Website and Registration",
+        bullets: [
+          "Leading redesign of the main site, registration and admin web systems for UIUC's 1,000+ attendee flagship hackathon.",
+          "Owning technical direction for the React/Next.js codebase and coordinating work across the student development team."
+        ],
+        skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Leadership"],
+        links: [{ label: "Link", href: "https://github.com/HackIllinois" }]
+      },
+    ]
+  },
+  {
+    logo: "icons/organizations/rp.png",
+    title: "Software Developer",
+    company: "Reflections Projections",
+    description:
+      "Built tools for sponsors and attendees at the Midwest’s largest collegiate tech conference.",
+    startDate: "07/2025",
+    endDate: "Present",
+    projects: [
+      {
+        name: "Sponsor Resumebook Platform",
+        bullets: [
+          "Revamped the sponsor resumebook, improving search, secure export and quick navigation across 2,000+ resumes."
+        ],
+        skills: ["React", "TypeScript", "Search", "Security", "Performance"],
+        links: [{ label: "Link", href: "https://github.com/ReflectionsProjections/rp-web/pull/24" }]
+      },
+      {
+        name: "Interactive Conference Site",
+        bullets: [
+          "Developed interactive, bespoke schedule, speaker and Q&A pages for the Midwest's largest collegiate tech conference."
+        ],
+        skills: ["React", "TypeScript", "UI components", "Accessibility"],
+        links: [{ label: "Link", href: "https://reflectionsprojections.org/" }]
+      }
+    ]
+  },
+  {
+    logo: "icons/organizations/pathways.png",
+    title: "Software Engineer Intern",
+    company: "PATHWAYos (acquired by Vector Solutions)",
+    description:
+      "Full-stack intern on a 500,000-student work-based learning platform.",
+    startDate: "06/2023",
+    endDate: "08/2023",
+    projects: [
+      {
+        name: "Work-based Learning Experience Matching System",
+        bullets: [
+          "Created a work-based learning experience system for a 500,000-student platform.",
+          'Engineered API to rank experiences based on preferences, location, experience, and availability with Swift and MySQL.'
+        ],
+        skills: ["React", "TypeScript", "Product engineering", "Design systems"]
+      },
+    ]
+  },
+  {
+    logo: "icons/organizations/normandy.png",
+    title: "Software Developer",
+    company: "Normandy Remodeling",
+    description:
+      "Built internal platforms and automation for a remodeling company.",
+    startDate: "08/2022",
+    endDate: "01/2025",
+    projects: [
+      {
+        name: "Cloud-based Customer Database Platform",
+        bullets: [
+          "Modernized deprecated 1999 customer database into cloud-based platform.",
+          "Manages data on 33,000+ customers, 9,900+ projects, and 100,000+ leads.",
+          "Implemented frontend in React, CSS and TypeScript, with backend in Node.js, Express, MongoDB and Azure."
+        ],
+        skills: [
+          "React",
+          "TypeScript",
+          "Node.js",
+          "Express",
+          "MongoDB",
+          "Azure",
+          "Full-stack"
+        ]
+      },
+      {
+        name: "Invoicing Automation System",
+        bullets: [
+          "Automated document, email and invoicing workflows for 100+ employees via Azure and OneDrive/Office 365 APIs.",
+        ],
+        skills: ["Azure", "Office 365 APIs", "Automation", "Integration"]
+      },
+      {
+        name: "Cloud-based Costbook",
+        bullets: [
+          "Engineered customizable, cloud-based costbook to enable price-tracking of 1,300+ cost items (HVAC, Plumbing, etc.) per job."
+        ],
+        skills: ["Azure", "Office 365 APIs", "Automation", "Integration"]
+      }
+    ]
+  },
+];
+
 export const PROJECTS = [
   new ProjectItem(
     PLATFORMSAI_ID,
