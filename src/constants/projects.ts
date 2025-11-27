@@ -147,7 +147,7 @@ export const EXPERIENCES: Experience[] = [
     company: "Reflections Projections",
     description:
       "Built tools for sponsors and attendees at the Midwest’s largest collegiate tech conference.",
-    startDate: "07/2025",
+    startDate: "03/2025",
     endDate: "Present",
     projects: [
       {
