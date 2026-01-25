@@ -56,7 +56,7 @@ const About: React.FC = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                My experience is at the intersection of <b>full-stack software engineering</b>, <b>computer vision</b>, and <b>generative AI</b>.
+                I have extensive experience in <b>large-scale cloud backend development</b>, <b>AI infrastructure</b>, & <b>full-stack engineering</b>.
               </motion.p>
 
               <motion.p
