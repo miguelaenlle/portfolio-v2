@@ -64,11 +64,11 @@ export const EXPERIENCES: Experience[] = [
       {
         name: "LLM-Driven Handwriting Grading Pipeline",
         bullets: [
-          "Developed an AI-powered pipeline to auto-grade handwritten exams.",
-          "Improved accuracy through retrieval-augmented generation, contrast optimization, and rotation correction.",
-          "Incorporated cost tracking, rate limiting, parallel batch jobs, and statistical reports.",
-          "Achieved 95% grading accuracy across thousands of submissions at UIUC.",
-          "Utilized TypeScript, React, Python, OpenCV, PostgreSQL Vector Databases, Google Gemini, OpenAI, and Anthropic."
+          "Accelerated manual grading process from 1 week to 1 hour by creating LLM-driven handwriting grading pipeline.",
+          "Architected backend scaling to grade 1,800 submissions/hr per course with Python, TypeScript, Redis, & SQL.",
+          "Achieved human-level 98% grading accuracy using GCP, Gemini, prompt-tuning experiments, & image correction.",
+          "Created staff dashboard visualizing real-time progress of 100s of concurrent grading jobs with React & SocketIO.",
+          "Incorporated cost tracking, rate limiting, parallel batch jobs, and statistical reports."
         ],
         skills: [
           "TypeScript",
