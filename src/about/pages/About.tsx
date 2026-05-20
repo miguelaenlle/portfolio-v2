@@ -56,13 +56,13 @@ const About: React.FC = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                I have extensive experience in <b>large-scale cloud backend development</b>, <b>AI infrastructure</b>, & <b>full-stack engineering</b>.
+                I have extensive experience in <b>agentic AI software development</b>, <b>AI infrastructure</b>, and <b>full-stack engineering</b>.
               </motion.p>
 
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
               >
                 See some of my work and experience below!

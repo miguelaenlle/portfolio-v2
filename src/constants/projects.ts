@@ -52,6 +52,24 @@ type Experience = {
 
 export const EXPERIENCES: Experience[] = [
   {
+    logo: "icons/organizations/adobe.png",
+    title: "Software Engineering Intern (Incoming)",
+    company: "Adobe",
+    description:
+      "Joining the GenStudio for Performance Marketing team to build AI-powered content optimization tools.",
+    startDate: "05/2026",
+    endDate: "08/2026",
+    projects: [
+      {
+        name: "GenStudio for Performance Marketing",
+        bullets: [
+          "Joining the GenStudio for Performance Marketing team, building AI-powered content optimization tools."
+        ],
+        skills: ["AI", "Content optimization", "Performance marketing"]
+      }
+    ]
+  },
+  {
     logo: "icons/organizations/prairielearn.png",
     logoFull: true,
     title: "Software Engineer Intern",
@@ -64,18 +82,21 @@ export const EXPERIENCES: Experience[] = [
       {
         name: "LLM-Driven Handwriting Grading Pipeline",
         bullets: [
-          "Accelerated manual grading process from 1 week to 1 hour by creating LLM-driven handwriting grading pipeline.",
-          "Architected backend scaling to grade 1,800 submissions/hr per course with Python, TypeScript, Redis, & SQL.",
-          "Achieved human-level 98% grading accuracy using GCP, Gemini, prompt-tuning experiments, & image correction.",
-          "Created staff dashboard visualizing real-time progress of 100s of concurrent grading jobs with React & SocketIO.",
-          "Incorporated cost tracking, rate limiting, parallel batch jobs, and statistical reports."
+          "Achieved 99%+ AI grading accuracy across 10k+ student submissions; co-authored AIED 2026 paper on results.",
+          "Architected cloud-based infrastructure for AI inference and evaluations with Google, OpenAI, and Anthropic APIs.",
+          "Designed and developed end-to-end user experience and APIs for grading, Stripe payments, and interpretability.",
+          "Engineered distributed, durable workflow engine for orchestrating multi-agent rubric editing & grading systems.",
+          "Deployed AI product features to 180,000 students at major universities including UIUC, Berkeley, and UBC.",
         ],
         skills: [
           "TypeScript",
           "React",
           "Python",
           "PostgreSQL",
+          "Redis",
+          "Gemini",
           "OpenAI API",
+          "Agents",
           "Image processing",
           "LLMs"
         ]
@@ -108,15 +129,16 @@ export const EXPERIENCES: Experience[] = [
     description:
       "Research and open-source work on MRI-based disease diagnosis with ML and generative models.",
     startDate: "06/2025",
-    endDate: "Present",
+    endDate: "02/2026",
     projects: [
       {
         name: "Diffusion-Augmented MRI Segmentation Pipeline",
         bullets: [
-          "Engineered PyTorch-based pipeline for diffusion-augmented MRI segmentation to improve stomach disease diagnosis.",
-          "Improved segmentation accuracy from 40% to 80% through augmentation and hyperparameter/pipeline tuning."
+          "Engineered ML pipeline to train and optimize automated MRI segmentation models with OpenCV and PyTorch.",
+          "Expanded limited proprietary training data by 1,600% via custom-trained, state-of-the-art generative AI models.",
+          "Improved segmentation accuracy from 39% to 80%. Collaborated with Google and Emory University researchers."
         ],
-        skills: ["Python", "PyTorch", "Linux", "Medical imaging", "Segmentation"],
+        skills: ["Python", "PyTorch", "OpenCV", "Generative AI", "Medical imaging", "Segmentation"],
         links: [{ label: "Link", href: "https://summerofcode.withgoogle.com/programs/2025/projects/QB45Mcpx" }]
       }
     ]
@@ -148,7 +170,7 @@ export const EXPERIENCES: Experience[] = [
     description:
       "Built tools for sponsors and attendees at the Midwest’s largest collegiate tech conference.",
     startDate: "03/2025",
-    endDate: "Present",
+    endDate: "09/2025",
     projects: [
       {
         name: "Sponsor Resumebook Platform",
