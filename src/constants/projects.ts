@@ -53,7 +53,7 @@ type Experience = {
 export const EXPERIENCES: Experience[] = [
   {
     logo: "icons/organizations/adobe.png",
-    title: "Software Engineering Intern",
+    title: "Software Engineer Intern",
     company: "Adobe",
     description:
       "Building agentic workflows for the GenStudio for Performance Marketing team.",
