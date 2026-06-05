@@ -53,19 +53,20 @@ type Experience = {
 export const EXPERIENCES: Experience[] = [
   {
     logo: "icons/organizations/adobe.png",
-    title: "Software Engineering Intern (Incoming)",
+    title: "Software Engineering Intern",
     company: "Adobe",
     description:
-      "Joining the GenStudio for Performance Marketing team to build AI-powered content optimization tools.",
+      "Building agentic workflows for the GenStudio for Performance Marketing team.",
     startDate: "05/2026",
-    endDate: "08/2026",
+    endDate: "Present",
     projects: [
       {
         name: "GenStudio for Performance Marketing",
         bullets: [
-          "Joining the GenStudio for Performance Marketing team, building AI-powered content optimization tools."
+          "Engineering agentic workflow ingesting user chats and campaign briefs to automate AI ad-generation setup tasks.",
+          "Integrating workflow across Adobe microservices and enterprise codebase using TypeScript, React, and LangGraph."
         ],
-        skills: ["AI", "Content optimization", "Performance marketing"]
+        skills: ["TypeScript", "React", "LangGraph", "Agents", "AI"]
       }
     ]
   },
@@ -75,9 +76,9 @@ export const EXPERIENCES: Experience[] = [
     title: "Software Engineer Intern",
     company: "PrairieLearn, Inc.",
     description:
-      "Full-stack intern building AI grading and exam tooling for a 180,000+ student platform.",
+      "Full-stack intern who built AI grading and exam tooling for a 180,000+ student platform.",
     startDate: "12/2024",
-    endDate: "Present",
+    endDate: "05/2026",
     projects: [
       {
         name: "LLM-Driven Handwriting Grading Pipeline",
@@ -99,7 +100,8 @@ export const EXPERIENCES: Experience[] = [
           "Agents",
           "Image processing",
           "LLMs"
-        ]
+        ],
+        links: [{ label: "Link", href: "https://www.prairielearn.com/about/blog/introducing-ai-grading" }]
       },
       {
         name: "Image Capture System",
@@ -148,15 +150,16 @@ export const EXPERIENCES: Experience[] = [
     title: "Web Team Lead",
     company: "HackIllinois",
     description:
-      "Leading the web platform for UIUC’s flagship 1,000+ attendee hackathon.",
+      "Led the web platform for UIUC’s flagship 1,000+ attendee hackathon.",
     startDate: "07/2025",
-    endDate: "Present",
+    endDate: "03/2026",
     projects: [
       {
         name: "HackIllinois 2026 Website and Registration",
         bullets: [
-          "Leading redesign of the main site, registration and admin web systems for UIUC's 1,000+ attendee flagship hackathon.",
-          "Owning technical direction for the React/Next.js codebase and coordinating work across the student development team."
+          "Led redesign of the site, registration, and admin web systems for UIUC's 1,000+ attendee flagship hackathon.",
+          "Revamped admin site, implementing features to streamline applicant, event, and sponsor data management.",
+          "Collaborated with designers, operations leads, and engineering teammates to iterate on systems developed."
         ],
         skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Leadership"],
         links: [{ label: "Link", href: "https://github.com/HackIllinois" }]
@@ -313,7 +316,7 @@ export const PROJECTS = [
     "Remote",
     "Software Engineer",
     "June 2022",
-    "Present",
+    "January 2025",
     ["Web Development", "Database Management"],
     [
       "Modernized legacy Microsoft Access-based customer database into a custom cloud-based platform",
@@ -353,7 +356,7 @@ export const PROJECTS = [
     "Remote",
     "Software Engineer",
     "June 2022",
-    "Present",
+    "January 2025",
     ["Web Development", "Database Management"],
     [
       "Developed custom, web-based costbook software for Normandy Remodeling",
