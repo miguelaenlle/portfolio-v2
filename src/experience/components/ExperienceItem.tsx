@@ -1,150 +1,98 @@
-import { ExternalLinkIcon } from "@heroicons/react/solid";
 import { motion, Variants } from "framer-motion";
-
-interface ExperienceProjectLink {
-  label: string;
-  href: string;
-}
-
-interface ExperienceProject {
-  name: string;
-  bullets: string[];
-  skills: string[];
-  links?: ExperienceProjectLink[];
-}
-
-interface ExperienceItemProps {
-  logo?: string;
-  logoFull?: boolean;
-  title: string;
-  company: string;
-  dateRange?: string;
-  description?: string;
-  delay?: number;
-  showDate?: boolean;
-  projects?: ExperienceProject[];
-}
+import { Experience } from "../../constants/experiences";
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 16 },
+  hidden: { opacity: 0, y: 24 },
   visible: (delay = 0) => ({
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.4,
-      delay,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.45, delay, ease: "easeOut" },
   }),
 };
 
-const projectVariants: Variants = {
-  hidden: { opacity: 0, y: 8 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.25,
-      ease: "easeOut",
-    },
-  },
+export const CompanyMark: React.FC<{
+  experience: Experience;
+  large?: boolean;
+}> = ({ experience, large = false }) => {
+  const size = large ? "h-20 w-20" : "h-16 w-16";
+
+  return (
+    <div
+      className={`${size} flex flex-shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm`}
+    >
+      <img
+        src={experience.logo}
+        alt={`${experience.company} logo`}
+        className={`h-full w-full object-contain ${
+          experience.logoFull ? "p-0" : "p-2.5"
+        }`}
+      />
+    </div>
+  );
 };
 
-const ExperienceItem: React.FC<ExperienceItemProps> = ({
-  logo,
-  logoFull,
-  title,
-  company,
-  dateRange,
-  description,
-  delay = 0,
-  showDate = true,
-  projects,
-}) => {
+const ExperienceItem: React.FC<{
+  experience: Experience;
+  delay?: number;
+  onSelect: (experience: Experience) => void;
+}> = ({ experience, delay = 0, onSelect }) => {
   return (
-    <motion.div
+    <motion.button
+      type="button"
       variants={cardVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.18 }}
       custom={delay}
+      whileHover={{ y: -6, scale: 1.01 }}
+      whileTap={{ scale: 0.995 }}
+      onClick={() => onSelect(experience)}
+      aria-haspopup="dialog"
+      aria-label={`Open ${experience.company} experience details`}
+      className="group relative flex w-full flex-col self-start overflow-hidden rounded-2xl border border-zinc-200 bg-white p-6 text-left shadow-md transition-colors duration-300 hover:border-zinc-300 hover:shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-cyan-300"
     >
-      {/* Header */}
-      <div className="bg-zinc-100 p-3 flex gap-4 items-center rounded-t-lg">
-        {logo && (
-          <div className="flex-shrink-0">
-            <div className="h-16 w-16 bg-zinc-200 flex items-center justify-center overflow-hidden rounded-lg">
-              <img
-                src={logo}
-                alt={company}
-                className={`w-full h-full object-contain ${logoFull ? "p-0" : "p-2"}`}
-              />
-            </div>
-          </div>
+      <div className="relative flex w-full items-start justify-between gap-4">
+        <motion.div transition={{ duration: 0.25 }} className="group-hover:scale-105">
+          <CompanyMark experience={experience} />
+        </motion.div>
+        {experience.current && (
+          <span className="flex items-center gap-2 rounded-full border border-cyan-300 bg-cyan-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-cyan-800">
+            <span className="h-2 w-2 rounded-full bg-cyan-500 shadow-[0_0_0_4px_rgba(6,182,212,0.14)]" />
+            Current
+          </span>
         )}
+      </div>
 
-        <div className="flex-1 min-w-0">
-          <h3 className="text-lg sm:text-xl font-bold text-gray-900">
-            {title}
-          </h3>
-          <p className="text-gray-600 font-medium text-base">
-            {company}
-          </p>
-          {showDate && dateRange && (
-            <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
-              {dateRange}
+      <div className="relative mt-5">
+        <h3 className="text-2xl font-bold leading-tight text-zinc-900">
+          {experience.company}
+        </h3>
+        <div className="mt-3 space-y-1.5">
+          {experience.roles.slice(0, 2).map((role) => (
+            <p key={`${role.title}-${role.dates}`} className="text-base leading-6">
+              <span className="font-normal text-zinc-800">{role.title}</span>
+              <span className="px-2 text-xl leading-none text-zinc-400">·</span>
+              <span className="text-zinc-950">{role.dates}</span>
             </p>
-          )}
+          ))}
         </div>
       </div>
 
-      {/* Projects */}
-      {projects && projects.length > 0 && (
-        <div className="space-y-3 mb-3 bg-zinc-100 px-3 pb-3 pt-2 rounded-b-lg">
-          {projects.map((project, idx) => (
-            <motion.div
-              key={`${project.name}-${idx}`}
-              variants={projectVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              className="text-xs text-sm bg-white p-3 rounded-lg"
-            >
-              <div className="flex flex-wrap items-center mb-2 gap-2">
-                <h4 className="font-semibold text-gray-900 text-base">
-                  {project.name}
-                </h4>
-                {project.links &&
-                  project.links.map((link) => (
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-cyan-600"
-                    >
-                      <div className="flex items-center gap-1 group hover:cursor-pointer" key={link.href}>
-                        <ExternalLinkIcon className="h-6 w-6 text-cyan-600 group-hover:text-cyan-800" />
-                        <p className="text-base group-hover:text-cyan-800">
-                          {link.label}
-                        </p>
-                      </div>
-                    </a>
-                  ))}
-              </div>
-              {project.bullets && project.bullets.length > 0 && (
-                <ul className="list-disc list-outside pl-5 text-gray-700 text-base leading-relaxed space-y-1">
-                  {project.bullets.map((bullet, idx) => (
-                    <li key={idx}>
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </motion.div>
-          ))}
-        </div>
-      )}
-    </motion.div>
+      <p className="text-balance relative mt-5 text-base leading-relaxed text-zinc-600">
+        {experience.summary}
+      </p>
+
+      <div className="relative mt-6 flex flex-wrap gap-2" aria-label="Keywords">
+        {experience.keywords.slice(0, 3).map((keyword) => (
+          <span
+            key={keyword}
+            className="rounded-full border border-zinc-200 bg-white/80 px-3 py-1 text-xs font-medium text-zinc-600 shadow-sm"
+          >
+            {keyword}
+          </span>
+        ))}
+      </div>
+    </motion.button>
   );
 };
 

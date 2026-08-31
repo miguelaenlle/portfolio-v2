@@ -1,6 +1,4 @@
-import { useDisplay } from "../hooks/use-display";
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 interface IconProps {
   link: string;
@@ -15,51 +13,32 @@ const Icon: React.FC<IconProps> = ({
   children,
   delay,
   label,
-  showLabel = false,
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const isExternal = !link.startsWith("mailto:");
 
   return (
     <motion.a
-      animate={{ y: [-52, 0], opacity: [0, 1] }}
+      initial={{ y: 12, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      whileHover={{ y: -2 }}
+      whileTap={{ scale: 0.97 }}
       transition={{
         delay,
-        y: { type: "spring", stiffness: 100 },
-        default: { duration: 0.4 },
+        duration: 0.42,
+        ease: [0.22, 1, 0.36, 1],
       }}
       href={link}
-      target="_blank"
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noreferrer" : undefined}
+      aria-label={label}
+      className="group inline-flex min-h-[44px] items-center gap-2 rounded-full border border-slate-500/80 bg-slate-800/45 px-3.5 py-2 text-slate-200 shadow-sm backdrop-blur-md transition-colors duration-200 hover:border-cyan-300/70 hover:bg-slate-700/70 hover:text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-cyan-300/40"
     >
-      <motion.div
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        transition={{
-          duration: 0.4,
-          ease: "easeInOut",
-        }}
-        className="group bg-slate-700/40 backdrop-blur-sm border-2 border-slate-500 hover:border-slate-300 hover:bg-slate-600/60 hover:cursor-pointer px-3 py-2 rounded-full shadow-md hover:shadow-lg flex items-center justify-center"
-      >
-        <div className="transition-all group-hover:scale-110 text-slate-300 group-hover:text-white pl-2">
-          {children}
-        </div>
-        {label && (
-          <motion.span
-            initial={{ opacity: showLabel ? 1 : 0, width: showLabel ? "auto" : 0 }}
-            animate={
-              showLabel
-                ? { opacity: 1, width: "auto" }
-                : isHovered
-                ? { opacity: 1, width: "auto" }
-                : { opacity: 0, width: 0 }
-            }
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="text-slate-300 group-hover:text-white text-sm font-medium overflow-hidden whitespace-nowrap px-1"
-          >
-            {label}
-          </motion.span>
-        )}
-      </motion.div>
+      <span className="transition-transform duration-200 group-hover:scale-105">
+        {children}
+      </span>
+      {label && <span className="text-sm font-semibold">{label}</span>}
     </motion.a>
   );
 };
+
 export default Icon;

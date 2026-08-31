@@ -2,8 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
 @layer base {
   html {
     font-family: Inter;
+    scroll-behavior: smooth;
+    background: #ffffff;
+  }
+
+  body {
+    margin: 0;
+    background: #ffffff;
+    color: #18181b;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgba(6, 182, 212, 0.24);
+    color: #083344;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }

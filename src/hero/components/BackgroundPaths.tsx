@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { useMemo } from 'react';
 
 function FloatingPaths({ position }: { position: number }) {
   const paths = Array.from({ length: 36 }, (_, i) => ({
@@ -15,18 +14,12 @@ function FloatingPaths({ position }: { position: number }) {
     width: 0.5 + i * 0.03,
   }));
 
-  const isMobileViewport = useMemo(() => {
-    if (typeof window !== 'undefined') {
-      return window.innerWidth <= 640;
-    }
-    return false;
-  }, [window.innerWidth]);
-
   return (
-    <div className="absolute inset-0 pointer-events-none opacity-50">
+    <div className="pointer-events-none absolute inset-0 opacity-45">
       <svg
-        className="w-full h-full"
-        viewBox={`0 0 696 ${isMobileViewport ? 800 : 316}`}
+        className="h-full w-full"
+        viewBox="0 0 696 420"
+        preserveAspectRatio="xMidYMid slice"
         fill="none"
       >
         {paths.map((path) => (
@@ -43,7 +36,7 @@ function FloatingPaths({ position }: { position: number }) {
               pathOffset: [0, 1, 0],
             }}
             transition={{
-              duration: 20 + Math.random() * 10,
+              duration: 22 + (path.id % 6) * 1.4,
               repeat: Number.POSITIVE_INFINITY,
               ease: 'linear',
             }}
@@ -67,29 +60,32 @@ export function BackgroundPaths({
     }
 
     return (
-        <div className="relative h-[100dvh] min-h-[500px] w-full flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-900 to-cyan-950 px-4">
+        <div className="relative flex h-[100dvh] w-full items-center justify-center overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-cyan-950 px-4">
           <div className="absolute inset-0 opacity-60">
               <FloatingPaths position={1} />
               <FloatingPaths position={-1} />
           </div>
-          <div className="relative z-10 container mx-auto px-2 sm:px-4 md:px-6 text-center">
+          <div className="container relative z-10 mx-auto px-2 text-center sm:px-4 md:px-6">
               {children}
           </div>
 
-          <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-slate-900 to-transparent pointer-events-none">
-
-          </div>
+          <div className="pointer-events-none absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-slate-950/70 to-transparent" />
 
           <motion.div
-            animate={{ y: [-20, 0], opacity: [0, 1] }}
+            initial={{ y: 12, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             transition={{
                 delay: 0.4 + 0.6,
                 duration: 0.5,
             }}
-            className="absolute bottom-4 sm:bottom-8"
+            className="absolute bottom-5 sm:bottom-8"
           >
-            <div className="flex flex-col items-center gap-0 text-slate-300 hover:text-gray-400 cursor-pointer transition-colors" onClick={handleClickLearnMore}>
-                <span className="text-base sm:text-lg md:text-xl font-medium">Learn more</span>
+            <button
+              type="button"
+              className="flex min-h-[44px] flex-col items-center gap-0 rounded-xl px-4 text-slate-300 transition-colors hover:text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-cyan-300/40"
+              onClick={handleClickLearnMore}
+            >
+                <span className="text-sm font-semibold sm:text-base">Explore</span>
                 <motion.svg
                 animate={{ y: [0, 8, 0] }}
                 transition={{
@@ -109,7 +105,7 @@ export function BackgroundPaths({
                 >
                 <polyline points="6 9 12 15 18 9"></polyline>
                 </motion.svg>
-            </div>
+            </button>
             </motion.div>
         </div>
     );

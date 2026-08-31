@@ -1,36 +1,36 @@
 import { motion } from "framer-motion";
 
 const NavbarButton: React.FC<{
-  delay: number;
+  delay?: number;
   text: string;
-  selectedButton: string;
   backgroundIsTransparent: boolean;
   handleGoToPage: (newPage: string) => void;
-}> = (props) => {
-  const handleSelect = () => {
-    props.handleGoToPage(props.text);
-  };
-
-
-  const buttonColor = props.backgroundIsTransparent ? 
-      (props.selectedButton === props.text ? "text-zinc-200 font-bold" : "text-zinc-400") : 
-      (props.selectedButton === props.text? "text-zinc-800 font-bold" : "text-zinc-500")
-
+  mobile?: boolean;
+}> = ({
+  delay = 0,
+  text,
+  backgroundIsTransparent,
+  handleGoToPage,
+  mobile = false,
+}) => {
   return (
-    <motion.div
-      animate={{ opacity: [0, 1] }}
-      transition={{
-        delay: props.delay,
-        y: { type: "spring", stiffness: 100 },
-        default: { duration: 0.5 },
-      }}
-      onClick={handleSelect}
-      className={`hover:cursor-pointer ${
-        buttonColor
-      } hover:text-zinc-800 hover:font-bold text-xl p-2`}
+    <motion.button
+      type="button"
+      initial={{ opacity: 0, y: -4 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay, duration: 0.3 }}
+      onClick={() => handleGoToPage(text)}
+      className={`min-h-[38px] rounded-full px-3 text-sm font-semibold transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-cyan-300/35 ${
+        mobile ? "w-full text-left" : "whitespace-nowrap"
+      } ${
+        backgroundIsTransparent
+          ? "text-slate-300 hover:bg-white/10 hover:text-white"
+          : "text-zinc-500 hover:bg-zinc-100 hover:text-zinc-950"
+      }`}
     >
-      {props.text}
-    </motion.div>
+      {text}
+    </motion.button>
   );
 };
+
 export default NavbarButton;
