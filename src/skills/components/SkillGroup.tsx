@@ -54,7 +54,7 @@ const SkillGroup: React.FC<{ skillTitle: string; skillID: string }> = (
         {SKILLS[props.skillID].map((skill: Skill) => {
           return (
             <SkillItem
-              key={`skill-item-${Math.random().toString()}`}
+              key={`skill-item-${props.skillID}-${skill.name}`}
               skill={skill}
               compact={false}
             />
@@ -62,7 +62,7 @@ const SkillGroup: React.FC<{ skillTitle: string; skillID: string }> = (
         })}
       </motion.div>
     );
-  }, [controls, itemContainerVariants]);
+  }, [controls, props.skillID]);
 
   return (
     <div

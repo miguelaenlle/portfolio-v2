@@ -92,11 +92,70 @@ export const CONFLUENCE = new Skill("Confluence", "confluence");
 
 export const TOOLS = [JIRA, CONFLUENCE, NOTION, TRELLO, GITHUB, FIGMA, VSCODE, POSTMAN, DEVTOOLS];
 
+const skill = (name: string, icon = "") => new Skill(name, icon);
+
+export const LANGUAGE_SKILLS = [
+  skill("Python", "py"),
+  skill("Go"),
+  skill("C++"),
+  skill("C"),
+  skill("Java"),
+  skill("TypeScript", "ts"),
+  skill("JavaScript", "js"),
+  skill("SQL"),
+  skill("Bash"),
+  skill("Swift", "swift"),
+  skill("HTML", "html"),
+  skill("CSS", "css"),
+];
+
+export const SYSTEMS_CLOUD_SKILLS = [
+  skill("AWS (EC2, S3, Lambda)", "aws"),
+  skill("GCP (Vertex AI, Compute)", "gcloud"),
+  skill("Cloudflare (Workers, R2)"),
+  skill("Kubernetes"),
+  skill("Docker"),
+  skill("Linux"),
+  skill("Prometheus"),
+];
+
+export const AI_ML_SKILLS = [
+  skill("PyTorch"),
+  skill("torch.distributed"),
+  skill("DDP"),
+  skill("NCCL"),
+  skill("NVLink"),
+  skill("CUDA"),
+  skill("vLLM"),
+  skill("LangGraph"),
+  skill("Hugging Face"),
+  skill("scikit-learn"),
+  skill("OpenCV"),
+  skill("NumPy"),
+  skill("Pandas"),
+];
+
+export const WEB_DATA_SKILLS = [
+  skill("React", "react"),
+  skill("Node.js", "node"),
+  skill("Express", "express"),
+  skill("REST"),
+  skill("tRPC"),
+  skill("WebSockets"),
+  skill("Socket.IO"),
+  skill("PostgreSQL"),
+  skill("Redis"),
+  skill("MongoDB", "mongodb"),
+  skill("CI/CD"),
+  skill("Git"),
+  skill("GitHub Actions", "github"),
+];
+
 export const SKILLS: { [key: string]: Skill[] } = {
-  FRONTEND: FRONTEND_SKILLS,
-  BACKEND: BACKEND_SKILLS,
-  SOFT: SOFT_SKILLS,
-  TOOLS: TOOLS,
+  LANGUAGES: LANGUAGE_SKILLS,
+  SYSTEMS_CLOUD: SYSTEMS_CLOUD_SKILLS,
+  AI_ML: AI_ML_SKILLS,
+  WEB_DATA: WEB_DATA_SKILLS,
 };
 
 export const REDDDIT_SKILLS = [

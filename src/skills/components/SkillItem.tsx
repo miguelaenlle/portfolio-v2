@@ -24,13 +24,16 @@ const SkillItem: React.FC<{
         !props.compact ? "p-2 space-x-2" : "space-x-2 p-1 px-2"
       }`}
     >
-      <img
-        className={`${
-          props.compact ? "h-5" : "h-6"
-        } micro:h-5 group-hover:scale-110`}
-        src={`/icons/libs/${props.skill.icon}.png`}
-        alt={props.skill.icon}
-      />
+      {props.skill.icon && (
+        <img
+          className={`${
+            props.compact ? "h-5" : "h-6"
+          } micro:h-5 group-hover:scale-110`}
+          src={`/icons/libs/${props.skill.icon}.png`}
+          alt=""
+          aria-hidden="true"
+        />
+      )}
       <p
         className={`text-zinc-500 text-md ${
           props.compact ? "text-lg" : "text-xl"
