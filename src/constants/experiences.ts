@@ -40,10 +40,12 @@ export const EXPERIENCES: Experience[] = [
         dates: "Aug 2026 – Present",
         summary: "",
         bullets: [
-          "Building a cloud-hosted coding agent to automate course authoring, autograder debugging, and other workflows currently performed manually by instructors and TAs.",
-          "Architecting a serverless agent fleet on Cloudflare Workers with isolated per-conversation Linux VM sandboxes.",
-          "Designing sandbox lifecycle management that checkpoints workspaces to R2 after idle periods and restores agent state on demand.",
-          "Building approval-gated Git workflows so instructors can inspect and authorize agent-generated repository changes before publication.",
+          "Created a scalable coding-agent platform that automates STEM course development, autograder debugging, and SQL-based data analysis, accelerating days-long course-authoring and operational workflows to minutes.",
+          "Built isolated sandbox provisioning and a custom Codex setup system for executing untrusted AI-generated code and SQL.",
+          "Engineered stateless sandbox lifecycle management with VM checkpoint, backup, and restoration, enabling fault-tolerant agent sessions that persist across idle periods while automatically deactivating VMs to minimize idle compute usage.",
+          "Supported ephemeral web servers that can disconnect and reconnect without interrupting ongoing durable workflows or inference jobs.",
+          "Implemented approval-gated Git commits that let instructors inspect and authorize agent-generated repository changes before publication.",
+          "Deploying the system to a platform serving 180,000 students using Terraform, AWS, and Cloudflare, with real-time cost accounting through PostgreSQL and Redis.",
         ],
       },
     ],
@@ -54,17 +56,17 @@ export const EXPERIENCES: Experience[] = [
     logo: "/icons/organizations/uiuc-block-i.png",
     current: true,
     summary:
-      "GPU inference cluster optimization using autoresearch and RL environments",
-    keywords: ["ML Systems", "Autoresearch", "Agent Environments"],
+      "Agentic RL for LLM inference scheduling and cluster optimization",
+    keywords: ["ML Systems", "Reinforcement Learning", "Distributed Systems"],
     roles: [
       {
         title: "ML Systems Research Intern",
         dates: "Aug 2026 – Present",
         summary: "",
         bullets: [
-          "Building an agentic environment to optimize scheduling, routing, and autoscaling policies for NVIDIA Dynamo LLM inference clusters.",
-          "Developing autoresearch-style policy optimization loops and RL fine-tuning infrastructure.",
-          "Testing policies with NVIDIA DynoSim at up to 1,200× real-time simulation speed.",
+          "Created an agentic RL environment where coding agents profile LLM inference clusters and rewrite scheduling, routing, and autoscaling policies.",
+          "Built a simulated GPU-cluster environment that replays production traces at 1,200× real-time while agents write scheduler code, debug it, and iterate against benchmarks.",
+          "Increased Qwen GPU-serving throughput by 40% over the vLLM default through an LLM-driven autoresearch loop that tunes scheduler policy.",
         ],
       },
     ],
@@ -95,8 +97,8 @@ export const EXPERIENCES: Experience[] = [
     logo: "/icons/organizations/prairielearn.png",
     logoFull: true,
     summary:
-      "Vision-LLM autograding and assessment infrastructure for handwritten student work",
-    keywords: ["Applied AI/ML", "Cloud", "Security"],
+      "Production AI image grading for handwritten student work",
+    keywords: ["Applied AI/ML", "Production Security", "Cloud"],
     references: [
       {
         label: "Read the arXiv paper",
@@ -109,15 +111,13 @@ export const EXPERIENCES: Experience[] = [
     ],
     roles: [
       {
-        title: "Software Engineer Intern",
-        dates: "Dec 2024 – May 2026",
+        title: "AI/ML Engineer Intern",
+        dates: "Aug 2025 – May 2026",
         summary: "",
         bullets: [
-          "Led R&D of a vision-LLM system that autograded handwritten mathematical work with 99% accuracy across 10,000+ submissions; co-authored an AIED 2026 paper on the results.",
-          "Built image-capture infrastructure for students to submit handwritten work from webcams, phones, and document cameras during live assessments.",
-          "Productized AI grading across a platform serving 180,000+ students with concurrent batch inference and real-time, socket-streamed grading progress.",
-          "Built usage-based billing and metering for AI grading, including instructor-facing cost tracking and Stripe-backed payments.",
-          "Developed durable PostgreSQL-backed workflows for long-running, resumable multi-agent rubric editing and grading operations.",
+          "Led R&D of an AI image-grading system that reached human-level 99% rubric accuracy across 10,000+ handwritten mathematics submissions; co-authored a published AIED 2026 paper on the results.",
+          "Built PostgreSQL-backed durable workflows for long-running, resumable multi-agent rubric editing and grading operations.",
+          "Scaled AI grading to a 180,000-student platform with concurrent batch inference, socket-streamed progress, usage-based Stripe billing, and encrypted bring-your-own-key credentials.",
         ],
       },
     ],

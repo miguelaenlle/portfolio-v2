@@ -49,7 +49,7 @@ const ExperienceItem: React.FC<{
       onClick={() => onSelect(experience)}
       aria-haspopup="dialog"
       aria-label={`Open ${experience.company} experience details`}
-      className="group relative flex w-full flex-col self-start overflow-hidden rounded-2xl border border-zinc-200 bg-white p-6 text-left shadow-md transition-colors duration-300 hover:border-zinc-300 hover:shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-cyan-300"
+      className="group relative flex h-full w-full flex-col self-stretch overflow-hidden rounded-2xl border border-zinc-200 bg-white p-6 text-left shadow-md transition-colors duration-300 hover:border-zinc-300 hover:shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-cyan-300"
     >
       <div className="relative flex w-full items-start justify-between gap-4">
         <motion.div transition={{ duration: 0.25 }} className="group-hover:scale-105">
@@ -82,7 +82,7 @@ const ExperienceItem: React.FC<{
         {experience.summary}
       </p>
 
-      <div className="relative mt-6 flex flex-wrap gap-2" aria-label="Keywords">
+      <div className="relative mt-auto flex flex-wrap gap-2 pt-6" aria-label="Keywords">
         {experience.keywords.slice(0, 3).map((keyword) => (
           <span
             key={keyword}

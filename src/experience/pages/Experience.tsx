@@ -17,7 +17,7 @@ const Experience: React.FC = () => {
     <section className="w-full bg-zinc-50 py-20 sm:py-24">
       <Wrapper>
         <Header text="Experience" />
-        <div className="mt-8 grid w-full grid-cols-1 items-start gap-6 md:grid-cols-2">
+        <div className="mt-8 grid w-full grid-cols-1 items-stretch gap-6 md:grid-cols-2">
           {EXPERIENCES.map((experience, index) => (
             <ExperienceItem
               key={experience.id}
