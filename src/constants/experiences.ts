@@ -40,12 +40,10 @@ export const EXPERIENCES: Experience[] = [
         dates: "Aug 2026 – Present",
         summary: "",
         bullets: [
-          "Created a scalable coding-agent platform that automates STEM course development, autograder debugging, and SQL-based data analysis, accelerating days-long course-authoring and operational workflows to minutes.",
-          "Built isolated sandbox provisioning and a custom Codex setup system for executing untrusted AI-generated code and SQL.",
-          "Engineered stateless sandbox lifecycle management with VM checkpoint, backup, and restoration, enabling fault-tolerant agent sessions that persist across idle periods while automatically deactivating VMs to minimize idle compute usage.",
-          "Supported ephemeral web servers that can disconnect and reconnect without interrupting ongoing durable workflows or inference jobs.",
-          "Implemented approval-gated Git commits that let instructors inspect and authorize agent-generated repository changes before publication.",
-          "Deploying the system to a platform serving 180,000 students using Terraform, AWS, and Cloudflare, with real-time cost accounting through PostgreSQL and Redis.",
+          "Built a coding-agent platform for STEM course development, autograder debugging, and SQL analysis, reducing days-long development workflows to minutes.",
+          "Engineered isolated sandbox provisioning and custom Codex harness setup for untrusted code and SQL implementation, with approval-gated Git commits for instructor review.",
+          "Built VM checkpoint/restore to preserve agent sessions while idle VMs shut down, and enabled ephemeral web servers to reconnect to ongoing durable workflows and inference jobs.",
+          "Deploying to a 180,000-student platform using Terraform, AWS, and Cloudflare, with real-time cost accounting in PostgreSQL and Redis.",
         ],
       },
     ],
@@ -60,13 +58,36 @@ export const EXPERIENCES: Experience[] = [
     keywords: ["ML Systems", "Reinforcement Learning", "Distributed Systems"],
     roles: [
       {
-        title: "ML Systems Research Intern",
+        title: "Undergraduate Researcher",
         dates: "Aug 2026 – Present",
         summary: "",
         bullets: [
           "Created an agentic RL environment where coding agents profile LLM inference clusters and rewrite scheduling, routing, and autoscaling policies.",
           "Built a simulated GPU-cluster environment that replays production traces at 1,200× real-time while agents write scheduler code, debug it, and iterate against benchmarks.",
           "Increased Qwen GPU-serving throughput by 40% over the vLLM default through an LLM-driven autoresearch loop that tunes scheduler policy.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "optitrain",
+    company: "OptiTrain",
+    logo: "/icons/organizations/optitrain.png",
+    logoFull: true,
+    summary:
+      "Cloud LLM training and inference platform",
+    keywords: ["ML Systems", "Distributed Systems", "Cloud"],
+    roles: [
+      {
+        title: "ML Systems Developer",
+        dates: "Jun 2026 – Sep 2026",
+        summary: "",
+        bullets: [
+          "Built a lightweight control plane orchestrating 8 EC2 GPU nodes with heartbeat-based failure detection and checkpoint recovery.",
+          "Chaos-tested a 17-hour GPT-2 124M pretraining run, recovering from 31 injected node failures with 167-second median recovery.",
+          "Developed a C++ network fault injector to test failure recovery in distributed LLM training across multiple AWS GPU servers.",
+          "Built Prometheus and Grafana observability for node liveness, training progress, and recovery events across the cluster.",
+          "Developed a Go and Kubernetes inference serving stack using vLLM continuous batching, KV caching, and optimized numerical precision.",
         ],
       },
     ],

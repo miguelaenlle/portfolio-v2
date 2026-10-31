@@ -176,7 +176,7 @@ export function AboutSection() {
             </p>
             <div className="about-note">
               <span>Currently</span>
-              <p>Software Engineer at PrairieLearn and ML Systems Research Intern at UIUC SSAIL.</p>
+              <p>Software Engineer at PrairieLearn and Undergraduate Researcher at UIUC SSAIL.</p>
             </div>
           </motion.div>
         </div>
